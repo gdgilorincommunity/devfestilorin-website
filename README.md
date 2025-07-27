@@ -1,5 +1,7 @@
 # DevFestIlorin Official Website
 
+Official Website Revamped for Devfest Ilorin
+
 Welcome to the official repository of **DevFest Ilorin 2025**, the biggest tech conference in North Central Nigeria! This event is part of the global **DevFest** initiative hosted by **Google Developer Groups (GDG)**. Our aim is to bring together developers, tech enthusiasts, and industry leaders to share knowledge, network, and build the future of technology.
 
 ## About The Project

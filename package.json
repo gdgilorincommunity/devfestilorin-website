@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "npm run lint --fix --cache",
+    "lint": "eslint . --ext .ts,.tsx --fix --cache",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"

@@ -2,22 +2,7 @@
 
 Official Website Revamped for Devfest Ilorin
 
-Welcome to the official repository of **DevFest Ilorin 2025**, the biggest tech conference in North Central Nigeria! This event is part of the global **DevFest** initiative hosted by **Google Developer Groups (GDG)**. Our aim is to bring together developers, tech enthusiasts, and industry leaders to share knowledge, network, and build the future of technology.
-
-## About The Project
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-This project is an open-source initiative design by the GDG Ilorin Lead on Figma and developed by the GDG Ilorin technical team for the Devfest Event. It aims to help create publicity about the Devfest event and help attendees find information they need quickly.
-
-## Features
-
-- **Talks and Workshops**: From industry leaders and Google experts.
-- **Workshops**: Learn from experts and apply your knowledge in real-world scenarios.
-- **Hackathons**: Collaborate with others to solve real-world problems.
-- **Networking**: Meet like-minded tech enthusiasts and professionals.
-- **Exhibitions**: Explore the latest tech products and innovations.
-- **DP Generation**: Easily generate your event dp.
+Welcome to the official repository of **DevFest Ilorin Website**, the biggest tech conference in North Central Nigeria! This event is part of the global **DevFest** initiative hosted by **Google Developer Groups (GDG)**. Our aim is to bring together developers, tech enthusiasts, and industry leaders to share knowledge, network, and build the future of technology.
 
 ## Getting Started
 
@@ -39,13 +24,24 @@ npm --version
 ### Installation
 
 1. Clone the repository
+```bash
 git clone https://github.com/Ahmzyjazzy/devfest-ilorin2025
+```
 
 2. Navigate to the project directory
+```bash
 cd devfest-ilorin2025
+```
 
 3. Install dependencies
+```bash
 npm install or yarn install
+```
+
+4. Preprare husky installation
+```bash
+npm run prepare
+```
 
 ### Running the Project Locally
 
@@ -74,6 +70,35 @@ We welcome contributions to the Devfest Event project! Here's how you can contri
 6. Open a Pull Request
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+#### Creating a PR
+- Switch to the main branch
+- Checkout to a new feature branch using the ticket name assigned on JIRA
+e.g if ticket name is TM-001 then that is the branch name
+```git checkout -b yourbranchname```
+- See [PULL_REQUEST_TEMPLATE.md](/.github/PULL_REQUEST_TEMPLATE.md) for guide on filling the Pull request template
+- If a feature branch exist for the current task you're working on, kindly branch out from that feature branch to create your branch
+E.g if we have a feature/epic-name all related ticket that belongs to the epic, their branch should also point to it when submiting PR
+
+#### Commit message
+Follow the commit message standared as outline below:
+```sh
+PATTERN="^(feat|fix|docs|style|refactor|test|chore)(\([a-z]+\))?: .{1,100}$"
+```
+###### Commit Message flags
+* feat - new feature or task implementation
+* fix - bug fix
+* docs - add update to readme or make some code documentation via comment only
+* style
+* refactor - minor rework on codebase or implementation improvement that affect one or less files (<= 5 files)
+* test - adding test
+* chore - major change to existing implementation that affect many files (>=6 files)
+
+
+e.g 
+```
+git commit -m 'feat: implement login flow'
+```
 
 ## License
 

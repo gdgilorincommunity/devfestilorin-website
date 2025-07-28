@@ -1,11 +1,9 @@
-import SpeakerSection from './components/speakers/SpeakerSection'
-import SponsorSection from './components/sponsors/SponsorSection'
+import Hero from '@/components/hero'
 
 export default function Home() {
   return (
-    <>
-      <SpeakerSection />
-      <SponsorSection />
-    </>
+    <div>
+      <Hero />
+    </div>
   )
 }

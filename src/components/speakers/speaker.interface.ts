@@ -8,3 +8,5 @@ interface Speaker {
   link: string
   type: string
 }
+
+export type { Speaker }

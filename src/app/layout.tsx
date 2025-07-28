@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import './globals.css'
 import thumbnail from '@public/2024/devfest-social-meta.png'
-
 import GdgLogo from '@/app/favicon.ico'
 import config from '@/config'
 

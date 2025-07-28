@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 
-import Greeting from './Greeting'
+import Greeting from './greeting'
 
 describe('Greeting Component', () => {
   it('renders the correct greeting message', () => {

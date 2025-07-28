@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import SpeakerCard from './SpeakerCard'
 import { LucideArrowRight } from 'lucide-react'
+
+import SpeakerCard from './SpeakerCard'
 
 const SpeakerSection = () => {
   const speakers: Speaker[] = [
@@ -49,6 +50,7 @@ const SpeakerSection = () => {
       type: 'workshop',
     },
   ]
+
   return (
     <section className="bg-[#FCF4F4] p-6 sm:p-12 md:p-16 lg:p-24 xl:p-[96px] w-full min-h-[400px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] xl:min-h-[880px]">
       <div className="flex flex-col gap-8 sm:gap-12 md:gap-14 lg:gap-16 w-full">
@@ -57,19 +59,19 @@ const SpeakerSection = () => {
             Our Speakers
           </h2>
           <Image
-              src="/devfest-lanyard.png"
-              alt="Speaker"
-              width={600}
-              height={200}
-              className="object-cover w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-auto"
-            />
-            <Image
-              src="/devfest-continental.png"
-              alt="Speaker"
-              width={600}
-              height={300}
-              className="object-fill w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-auto"
-            />
+            alt="Speaker"
+            className="object-cover w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-auto"
+            height={200}
+            src="/devfest-lanyard.png"
+            width={600}
+          />
+          <Image
+            alt="Speaker"
+            className="object-fill w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-auto"
+            height={300}
+            src="/devfest-continental.png"
+            width={600}
+          />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-[50px] w-full items-start justify-between flex-wrap">

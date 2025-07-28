@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { LucideArrowRight } from 'lucide-react'
+import Link from 'next/link'
+
+import { Button } from '../ui/button'
 
 import SpeakerCard from './speaker-card'
-import Link from 'next/link'
-import { Button } from '../ui/button'
 
 const SpeakerSection = () => {
   const speakers: Speaker[] = [

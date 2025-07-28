@@ -26,7 +26,9 @@ const SpeakerCard = ({ speaker }: { speaker: Speaker }) => {
 
         <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 right-2 sm:right-3 md:right-4 z-10 flex items-center gap-1 sm:gap-2">
           <div className="relative bg-white border border-black rounded-full px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-center">
-            <div className="font-bold text-black text-[10px] sm:text-[12px] md:text-sm">{speaker.name}</div>
+            <div className="font-bold text-black text-[10px] sm:text-[12px] md:text-sm">
+              {speaker.name}
+            </div>
             <div className="text-black text-[8px] sm:text-[10px] md:text-xs">
               {speaker.title}, {speaker.company}
             </div>

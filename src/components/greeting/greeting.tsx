@@ -9,6 +9,7 @@ export default function Greeting({ name, onButtonClick }: GreetingProps) {
   return (
     <div>
       <h1>Hello, {name}!</h1>
+
       <button onClick={onButtonClick}>Click Me</button>
     </div>
   )

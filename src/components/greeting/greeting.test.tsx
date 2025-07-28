@@ -1,26 +1,32 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { render, screen, fireEvent } from '@testing-library/react'
+
 import Greeting from './greeting'
 
 describe('Greeting Component', () => {
   it('renders the correct greeting message', () => {
     render(<Greeting name="World" />)
-    expect(screen.getByText('Hello, World!')).toBeInTheDocument()
+
+    const headingElement = screen.getByText(/Hello, World!/i)
+
+    expect(headingElement).toBeInTheDocument()
   })
 
   it('displays the button', () => {
-    render(<Greeting name="World" />)
-    expect(screen.getByText('Click Me')).toBeInTheDocument()
+    render(<Greeting name="Test" />)
+    const buttonElement = screen.getByRole('button', { name: /click me/i })
+
+    expect(buttonElement).toBeInTheDocument()
   })
 
-  it('handles button click', () => {
-    const mockClick = jest.fn()
-    render(<Greeting name="World" onButtonClick={mockClick} />)
+  it('handles button click (example of interaction)', () => {
+    const mockOnButtonClick = jest.fn()
 
-    const button = screen.getByText('Click Me')
-    button.click()
+    render(<Greeting name="User" onButtonClick={mockOnButtonClick} />)
+    const buttonElement = screen.getByRole('button', { name: /click me/i })
 
-    expect(mockClick).toHaveBeenCalledTimes(1)
+    // Simulate a click event
+    fireEvent.click(buttonElement)
+
+    expect(mockOnButtonClick).toHaveBeenCalledTimes(1)
   })
 })

@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import { LucideArrowRight } from 'lucide-react'
 
-import SpeakerCard from './SpeakerCard'
+import SpeakerCard from './speaker-card'
+import Link from 'next/link'
+import { Button } from '../ui/button'
 
 const SpeakerSection = () => {
   const speakers: Speaker[] = [
@@ -81,14 +83,9 @@ const SpeakerSection = () => {
         </div>
 
         <div className="flex gap-4 w-full items-center justify-center lg:justify-end">
-          <div className="flex w-fit text-[#ffffff] font-[700] text-[14px] sm:text-[16px] h-[50px] sm:h-[60px] lg:h-[66px] gap-3 sm:gap-4 items-center justify-center rounded-[30px] sm:rounded-[35px] lg:rounded-[40px] py-[15px] sm:py-[18px] lg:py-[20px] px-[20px] sm:px-[24px] lg:px-[27px] bg-[#000000]">
-            <span className="text-[#ffffff] font-[700] text-[14px] sm:text-[16px]">
-              Apply to speak
-            </span>
-            <span className="h-[20px] sm:h-[24px] lg:h-[26px] p-[6px] sm:p-[7px] lg:p-[8px] w-[28px] sm:w-[30px] lg:w-[32px] flex items-center justify-center rounded-full bg-[#ffffff]">
-              <LucideArrowRight className="w-3 h-3 sm:w-4 sm:h-4 -rotate-45 text-[#000000]" />
-            </span>
-          </div>
+          <Link href="#speakers">
+            <Button showArrow>Apply to speak</Button>
+          </Link>
         </div>
       </div>
     </section>

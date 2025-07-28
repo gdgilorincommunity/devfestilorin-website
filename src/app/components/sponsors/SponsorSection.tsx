@@ -1,8 +1,8 @@
 import { LucideArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 import SponsorCard from './SponsorCard'
 import PartnerCard from './PartnerCard'
-import Image from 'next/image'
 
 const SponsorSection = () => {
   const sponsors = [
@@ -22,23 +22,23 @@ const SponsorSection = () => {
       type: 'partner',
     },
     {
-        id: 2,
-        name: 'Google Developer Groups Kwasu',
-        logo: '/gdg-logo.png',
-        type: 'partner',
-      },
-      {
-        id: 3,
-        name: 'Google Developer Groups Kwara State Polytechnic',
-        logo: '/gdg-logo.png',
-        type: 'partner',
-      },
-      {
-        id: 3,
-        name: 'Google Developer Groups Al-Hikmah University',
-        logo: '/gdg-logo.png',
-        type: 'partner',
-      },
+      id: 2,
+      name: 'Google Developer Groups Kwasu',
+      logo: '/gdg-logo.png',
+      type: 'partner',
+    },
+    {
+      id: 3,
+      name: 'Google Developer Groups Kwara State Polytechnic',
+      logo: '/gdg-logo.png',
+      type: 'partner',
+    },
+    {
+      id: 3,
+      name: 'Google Developer Groups Al-Hikmah University',
+      logo: '/gdg-logo.png',
+      type: 'partner',
+    },
   ]
 
   return (
@@ -91,20 +91,20 @@ const SponsorSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[28px] font-[700] text-[#1e1e1e] text-center sm:text-left">
             Community Partners
           </h2>
-            <Image
-              alt="Speaker"
-              className="object-cover w-[120px] sm:w-[150px] md:w-[200px] lg:w-[300px] xl:w-[400px] h-auto"
-              height={300}
-              src="/devfest-lanyard.png"
-              width={600}
-            />
-            <Image
-              alt="Speaker"
-              className="object-fill w-[120px] sm:w-[150px] md:w-[200px] lg:w-[300px] xl:w-[400px] h-auto"
-              height={300}
-              src="/devfest-continental.png"
-              width={600}
-            />
+          <Image
+            alt="Speaker"
+            className="object-cover w-[120px] sm:w-[150px] md:w-[200px] lg:w-[300px] xl:w-[400px] h-auto"
+            height={300}
+            src="/devfest-lanyard.png"
+            width={600}
+          />
+          <Image
+            alt="Speaker"
+            className="object-fill w-[120px] sm:w-[150px] md:w-[200px] lg:w-[300px] xl:w-[400px] h-auto"
+            height={300}
+            src="/devfest-continental.png"
+            width={600}
+          />
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8 w-full items-center justify-center sm:justify-start mt-6 sm:mt-8 lg:mt-[32px]">

@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 interface Sponsor {
   id: number
@@ -15,12 +15,12 @@ const SponsorCard = ({ sponsor }: SponsorCardProps) => {
   return (
     <div className="flex items-center gap-3 sm:gap-4">
       <div className="flex items-center gap-2">
-        <Image 
-          src={sponsor.logo} 
-          alt={sponsor.name} 
-          width={200} 
-          height={80} 
+        <Image
+          alt={sponsor.name}
           className="w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px] h-auto object-contain"
+          height={80}
+          src={sponsor.logo}
+          width={200}
         />
       </div>
     </div>

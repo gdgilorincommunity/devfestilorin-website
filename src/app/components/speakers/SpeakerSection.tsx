@@ -53,8 +53,8 @@ const SpeakerSection = () => {
 
   return (
     <section className="bg-[#FCF4F4] p-6 sm:p-12 md:p-16 lg:p-24 xl:p-[96px] w-full min-h-[400px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] xl:min-h-[880px]">
-      <div className="flex flex-col gap-8 sm:gap-12 md:gap-14 lg:gap-16 w-full">
-        <div className="flex flex-col lg:flex-row gap-4 w-full items-center justify-between">
+      <div className="flex flex-col gap-8 sm:gap-12 md:gap-14 lg:gap-16 w-full ">
+        <div className="flex flex-col xl:flex-row gap-4 w-full items-center justify-between">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[58px] font-[700] text-[#1e1e1e] text-center lg:text-left">
             Our Speakers
           </h2>
@@ -74,7 +74,7 @@ const SpeakerSection = () => {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-[50px] w-full items-start justify-between flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-[50px] w-full items-center lg:items-start justify-center lg:justify-between flex-wrap">
           {speakers.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}

@@ -1,6 +1,10 @@
 export interface Speaker {
-  image: string | StaticImageData
+  id: number
   name: string
-  role: string
-  day: 'conference' | 'workshop' | 'panelist'
+  image: string
+  description: string
+  title: string
+  company: string
+  link: string
+  type: string
 }

@@ -75,7 +75,7 @@ const EventsSection: React.FC = () => {
         />
 
         {/* MAIN GRID */}
-        <div className="grid grid-cols-3 gap-10 mt-8 items-stretch">
+        <div className="grid grid-cols-3 gap-10 my-10">
           <div className="">
             <EventCard
               isLarge

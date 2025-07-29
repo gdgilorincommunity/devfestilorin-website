@@ -18,9 +18,11 @@ const SpeakersSection = () => {
           titleColor="black"
         />
 
-        <div className="grid lg:grid-cols-3 items-center justify-center gap-10 my-10">
-          {speakers.map((speaker) => (
-            <SpeakerCard key={speaker.id} speaker={speaker} />
+        <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-6 sm:gap-10 my-10">
+          {speakers.map((speaker, index) => (
+            <div key={index} className="flex justify-center">
+              <SpeakerCard speaker={speaker} />
+            </div>
           ))}
         </div>
 

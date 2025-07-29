@@ -6,6 +6,8 @@ import SpeakersSection from '@/components/sections/speakers-section'
 import SponsorsSection from '@/components/sections/sponsors-section'
 import PartnersAndTicketsSection from '@/components/sections/partners-and-tickets-section'
 
+import TicketsSection from '@/app/components/tickets/TicketsSection'
+
 export default function Home() {
   return (
     <div>
@@ -16,6 +18,7 @@ export default function Home() {
       <SpeakersSection />
       <SponsorsSection />
       <PartnersAndTicketsSection />
+      <TicketsSection />
     </div>
   )
 }

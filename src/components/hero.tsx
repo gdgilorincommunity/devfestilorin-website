@@ -227,7 +227,7 @@ const Hero = () => {
             Ilorin&apos;s largest tech celebration of the year!
           </p>
 
-          <Link href="/tickets">
+          <Link href="#">
             <Button showArrow>Get Tickets</Button>
           </Link>
         </div>

@@ -4,6 +4,7 @@ import type { StaticImageData } from 'next/image'
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import workshops from '@public/workshops.png'
 import hackathons from '@public/hackathons.png'
@@ -112,7 +113,9 @@ const EventsSection: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 mt-8 flex justify-center">
-          <Button showArrow>Get Tickets</Button>
+          <Link href="#">
+            <Button showArrow>Get Tickets</Button>
+          </Link>
         </div>
       </div>
     </section>

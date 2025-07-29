@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { recapData } from '@/constants/recap'
 
@@ -30,9 +31,11 @@ const RecapsSection = () => {
           />
         </div>
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 mt-8 flex justify-end">
-          <Button showArrow variant="white">
-            View 2024
-          </Button>
+          <Link href="#">
+            <Button showArrow variant="white">
+              View 2024
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

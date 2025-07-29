@@ -214,7 +214,7 @@ const Hero = () => {
   return (
     <div
       ref={inViewRef}
-      className="bg-[#FCF4F4] min-h-[calc(100vh-90px)] md:min-h-0 md:py-32 relative overflow-hidden"
+      className="bg-[#FCF4F4] min-h-[calc(100vh-100px)] md:min-h-full md:pb-32 relative overflow-hidden"
     >
       <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[500px] mx-auto">

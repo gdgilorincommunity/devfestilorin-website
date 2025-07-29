@@ -10,11 +10,15 @@ const RecapsSection = () => {
   const sortedContent = recapData.sort((a, b) => a.order - b.order)
 
   return (
-    <div className="bg-[#1E1E1E]">
-      <section>
-        <section className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 mb-8">
-          <Lanyard title="Previous Devfest Recaps:" titleColor="white" />
-        </section>
+    <section className="bg-[#1E1E1E]">
+      <div>
+        <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 mb-8">
+          <Lanyard
+            lanyardClassName="bg-[#FCF4F4]"
+            title="Previous Devfest Recaps:"
+            titleColor="white"
+          />
+        </div>
 
         <RecapsInfiniteMovingCards
           direction="left"
@@ -28,8 +32,8 @@ const RecapsSection = () => {
             View 2024
           </Button>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 

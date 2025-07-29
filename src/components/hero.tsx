@@ -212,8 +212,11 @@ const Hero = () => {
   const visibleTags = isMobile ? tags.filter((tag) => tag.showOnMobile) : tags
 
   return (
-    <div ref={inViewRef} className="bg-[#FCF4F4] min-h-screen">
-      <section className="max-w-7xl mx-auto px-6 py-10 md:py-20">
+    <div
+      ref={inViewRef}
+      className="bg-[#FCF4F4] min-h-[calc(100vh-90px)] relative overflow-hidden"
+    >
+      <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[500px] mx-auto">
           <h1 className="text-[74px] font-bold text-center leading-[100%]">
             Devfest <br className="hidden md:block" /> Ilorin
@@ -228,7 +231,9 @@ const Hero = () => {
             <Button showArrow>Get Tickets</Button>
           </Link>
         </div>
+      </section>
 
+      <div className="absolute inset-0 pointer-events-none z-20">
         <Gravity
           ref={gravityRef}
           autoStart={false}
@@ -251,7 +256,7 @@ const Hero = () => {
             </MatterBody>
           ))}
         </Gravity>
-      </section>
+      </div>
     </div>
   )
 }

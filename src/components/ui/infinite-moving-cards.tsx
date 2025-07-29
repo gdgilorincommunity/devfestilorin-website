@@ -73,11 +73,11 @@ export const InfiniteMovingCards = ({
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '20s')
+        containerRef.current.style.setProperty('--animation-duration', '8s')
       } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '40s')
+        containerRef.current.style.setProperty('--animation-duration', '12s')
       } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s')
+        containerRef.current.style.setProperty('--animation-duration', '25s')
       }
     }
   }
@@ -107,7 +107,7 @@ export const InfiniteMovingCards = ({
   const renderRecapItem = (item: ContentItem, idx: number) => {
     if (isRecapBreakpoint(item)) {
       return (
-        <li key={idx} className="relative w-[400px] max-w-full shrink-0">
+        <li key={idx} className="relative max-w-full shrink-0">
           <CornerBox backgroundColor={item.data.color}>
             <div className="text-center">
               <h1 className="text-[60px] font-bold text-[#1E1E1E] mb-4 leading-[100%]">
@@ -126,7 +126,7 @@ export const InfiniteMovingCards = ({
 
     if (isRecapImage(item)) {
       return (
-        <li key={item.id} className="relative w-[400px] max-w-full shrink-0">
+        <li key={item.id} className="relative max-w-full shrink-0">
           <CornerBox backgroundColor="#f0f0f0">
             <div className="w-full h-full flex items-center justify-center">
               <Image
@@ -162,7 +162,8 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        'scroller relative z-20 overflow-hidden',
+        // '[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className,
       )}
     >

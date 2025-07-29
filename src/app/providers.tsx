@@ -14,7 +14,7 @@ interface ProvidersProp {
 export function Providers({ children }: ProvidersProp) {
   return (
     <QueryProvider>
-      <ReactLenis root options={{ duration: 0.8, easing: (t) => t }}>
+      <ReactLenis root options={{ duration: 0.4, easing: (t) => t }}>
         <Navbar />
         {children}
         <Footer />

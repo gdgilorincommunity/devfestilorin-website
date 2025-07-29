@@ -26,13 +26,13 @@ npm --version
 1. Clone the repository
 
 ```bash
-git clone https://github.com/gdgilorincommunity/devfestilorin-website
+git clone https://github.com/Ahmzyjazzy/devfest-ilorin2025
 ```
 
 2. Navigate to the project directory
 
 ```bash
-cd devfestilorin-website
+cd devfest-ilorin2025
 ```
 
 3. Install dependencies

@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet'
-import { menuLinks } from '@/constants/menuLinks'
+import { menuLinks } from '@/constants/menu-links'
 
 export default function Navbar() {
   return (

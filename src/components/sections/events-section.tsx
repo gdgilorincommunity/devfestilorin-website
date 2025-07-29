@@ -72,7 +72,7 @@ const EventsSection: React.FC = () => {
 
         {/* MAIN GRID - Responsive */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 my-10">
-          <div className="lg:col-span-1 h-[280px] lg:h-[300px]">
+          <div className="lg:col-span-1 h-[280px] lg:h-auto">
             <EventCard
               isLarge
               bgColor="#F8D8D8"

@@ -2,9 +2,10 @@ import React from 'react'
 
 import { recapData } from '@/constants/recap'
 
-import { RecapsInfiniteMovingCards } from '../ui/recap-infinite-moving-cards'
-import Lanyard from '../lanyard'
-import { Button } from '../ui/button'
+import Lanyard from '../../lanyard'
+import { Button } from '../../ui/button'
+
+import { RecapsInfiniteMovingCards } from './recap-infinite-moving-cards'
 
 const RecapsSection = () => {
   const sortedContent = recapData.sort((a, b) => a.order - b.order)

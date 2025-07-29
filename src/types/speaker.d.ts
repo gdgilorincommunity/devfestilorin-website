@@ -1,10 +1,11 @@
+import { StaticImageData } from 'next/image'
+
 export interface Speaker {
   id: number
   name: string
-  image: string
-  description: string
+  image: StaticImageData | string
   title: string
   company: string
-  link: string
   type: string
+  color: string
 }

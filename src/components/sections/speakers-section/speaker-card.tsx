@@ -1,6 +1,12 @@
 import Image from 'next/image'
 
-const SpeakerCard = ({ speaker }: { speaker: Speaker }) => {
+import { Speaker } from '@/types'
+
+interface SpeakerCardProps {
+  speaker: Speaker
+}
+
+const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
   return (
     <div className="relative w-[280px] sm:w-[320px] md:w-[350px] lg:w-[390px] h-[320px] sm:h-[380px] md:h-[420px] lg:h-[460px] bg-[#FCE4E7] border-[2px] sm:border-[3px] border-black rounded-none">
       <div className="absolute -top-[6px] sm:-top-[9px] -left-[6px] sm:-left-[9px] w-[12px] sm:w-[18px] h-[12px] sm:h-[18px] bg-white border-[1px] sm:border-[2px] border-black z-10" />

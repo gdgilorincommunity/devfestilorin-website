@@ -1,5 +1,7 @@
 'use client'
 
+import type { StaticImageData } from 'next/image'
+
 import React from 'react'
 import Image from 'next/image'
 
@@ -9,7 +11,6 @@ import headerImage from '../assets/header2.png'
 import bgWorkshops from '../assets/bg1.png'
 import bgHackathon from '../assets/bg2.png'
 import bgPrivateNetwork from '../assets/bg3.png'
-import type { StaticImageData } from 'next/image'
 
 import { Button } from './ui/button'
 

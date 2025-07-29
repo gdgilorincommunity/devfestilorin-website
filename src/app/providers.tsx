@@ -1,7 +1,5 @@
 'use client'
 
-import Navbar from '@/components/navbar'
-
 import QueryProvider from './query-provider'
 
 interface ProvidersProp {
@@ -9,10 +7,5 @@ interface ProvidersProp {
 }
 
 export function Providers({ children }: ProvidersProp) {
-  return (
-    <QueryProvider>
-      <Navbar />
-      {children}
-    </QueryProvider>
-  )
+  return <QueryProvider>{children}</QueryProvider>
 }

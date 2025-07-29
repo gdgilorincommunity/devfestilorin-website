@@ -1,5 +1,8 @@
+import { StaticImageData } from 'next/image'
+
 export interface Sponsor {
-  img: string | StaticImageData
+  id: number
+  name: string
+  logo: string | StaticImageData
   type: string
-  website: string
 }

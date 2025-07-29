@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="absolute inset-0 z-50">
+      <div className="absolute inset-0 z-50 hidden lg:block">
         <GravityTags />
       </div>
     </div>

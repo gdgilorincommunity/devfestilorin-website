@@ -1,9 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 
-import gdg from '@public/gdg-ilorin.png'
 import lanyard from '@public/lanyard.png'
 import { cn } from '@/lib/utils'
+
+import GdgIlorin from './gdg-ilorin'
 
 const Lanyard = ({
   title,
@@ -12,7 +13,7 @@ const Lanyard = ({
   textSize = 'normal',
 }: {
   title: string
-  titleColor: string
+  titleColor: 'white' | 'black'
   lanyardClassName?: string
   textSize?: 'normal' | 'large'
 }) => {
@@ -29,7 +30,7 @@ const Lanyard = ({
       </h2>
 
       <div className="flex items-center gap-6">
-        <Image alt="gdg" className="w-[350px]" src={gdg} />
+        <GdgIlorin color={titleColor} />
 
         <div className={cn('p-1.5 rounded-[60px]', lanyardClassName)}>
           <Image alt="lanyard" className="w-[400px]" src={lanyard} />

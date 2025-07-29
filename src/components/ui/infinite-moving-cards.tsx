@@ -146,7 +146,7 @@ export const InfiniteMovingCards = ({
 
   const renderPartnerItem = (item: Partner, idx: number) => {
     return (
-      <li key={idx} className="relative w-[200px] max-w-full shrink-0">
+      <li key={idx} className="relative w-[250px] max-w-full shrink-0">
         <div className="w-full h-full flex items-center justify-center p-4">
           <Image
             alt={item.name}

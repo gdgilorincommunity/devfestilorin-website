@@ -4,8 +4,8 @@ import { partners } from '@/constants/partners'
 
 const Partners = () => {
   return (
-    <div>
-      <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 mb-8">
+    <div className="border-b-3 border-b-[#1E1E1E]">
+      <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20">
         <Lanyard
           lanyardClassName="bg-[#fff]"
           title="Community Partners"

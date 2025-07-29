@@ -9,6 +9,7 @@ import Link from 'next/link'
 import workshops from '@public/workshops.png'
 import hackathons from '@public/hackathons.png'
 import privateNetwork from '@public/private-network.png'
+import gdgLanyard from '@public/gdg-lanyard.png'
 
 import { Button } from '../ui/button'
 import CornerBox from '../corner-box'
@@ -24,43 +25,37 @@ type EventCardProps = {
 
 const EventCard: React.FC<EventCardProps> = ({
   title,
-  // textColor,
+  textColor,
   bgColor,
   bgImage,
 }) => (
   <CornerBox
-    backgroundColor={bgColor}
+    backgroundColor={bgImage ? 'transparent' : bgColor}
     borderColor="border-black"
-    className={`${title === 'Workshops' ? 'h-full' : 'h-[300px]'} w-full`}
-    // className={isLarge ? 'w-[541px] h-[659px]' : 'w-88 h-96'}
+    className={`${title === 'Workshops' ? 'h-full' : 'h-[280px] lg:h-[300px]'} w-full`}
+    style={{
+      background: bgImage
+        ? `url(${(bgImage as StaticImageData).src}) center/cover no-repeat`
+        : undefined,
+    }}
   >
-    {/* <Image
-      alt={`${title} header`}
-      className="block mx-auto py-3 px-3 opacity-60"
-      // src={headerImage}
-    /> */}
+    <div className="p-8 flex flex-col items-center justify-between  h-full w-full">
+      <Image
+        alt="gdg lanyard"
+        className="w-[400px] h-auto object-contain"
+        src={gdgLanyard}
+      />
 
-    {bgImage && (
-      <div className="w-full h-full flex items-center justify-center">
-        <Image
-          fill
-          alt={`${title} background`}
-          className="object-cover object-center"
-          // className="object-cover object-center rounded-xl p-1"
-          src={bgImage}
-        />
-      </div>
-    )}
-    {/* 
-    <div className="absolute bottom-0 left-0 right-0 text-center pb-4">
       <h1
-      // className={`${
-      //   isLarge ? 'text-6xl' : 'text-4xl'
-      // } font-black ${textColor} bg-clip-text mb-4 tracking-tight text-left px-2`}
+        className="text-white text-[35px] lg:text-[54px] font-bold text-start w-full leading-[120%] tracking-[2%]"
+        style={{
+          color: textColor,
+          textShadow: '1px 0 black, -1px 0 black, 0 1px black, 0 -1px black',
+        }}
       >
         {title}
       </h1>
-    </div> */}
+    </div>
   </CornerBox>
 )
 
@@ -75,37 +70,37 @@ const EventsSection: React.FC = () => {
           titleColor="black"
         />
 
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-3 gap-10 my-10">
-          <div className="">
+        {/* MAIN GRID - Responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 my-10">
+          <div className="lg:col-span-1 h-[280px] lg:h-[300px]">
             <EventCard
               isLarge
               bgColor="#F8D8D8"
               bgImage={workshops}
-              textColor="text-black"
+              textColor="#FF7DAF"
               title="Workshops"
             />
           </div>
 
-          <div className="col-span-2 space-y-10 flex flex-col">
+          <div className="lg:col-span-2 space-y-8 lg:space-y-12 flex flex-col">
             <EventCard
               bgColor="#FFE7A5"
-              textColor="text-black"
+              textColor="#FFD427"
               title="Conference"
             />
 
-            <div className="grid grid-cols-2 gap-10 flex-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 flex-1">
               <EventCard
                 bgColor="#CCF6C5"
                 bgImage={hackathons}
-                textColor="text-black"
+                textColor="#5CDB6D"
                 title="Hackathons"
               />
 
               <EventCard
                 bgColor="#C3ECF6"
                 bgImage={privateNetwork}
-                textColor="text-black"
+                textColor="#57CAFF"
                 title="Private Network"
               />
             </div>

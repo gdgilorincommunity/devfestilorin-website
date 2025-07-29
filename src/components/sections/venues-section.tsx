@@ -23,7 +23,7 @@ const Venue = () => {
           <Image
             unoptimized
             alt="venue Image"
-            className="rounded-[32px]"
+            className="min-h-[200px] object-cover rounded-[16px] lg:rounded-[32px]"
             src={venue}
           />
         </div>

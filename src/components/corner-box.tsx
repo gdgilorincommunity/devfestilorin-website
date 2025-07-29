@@ -5,14 +5,16 @@ export default function CornerBox({
   children,
   className = 'w-88 h-96',
   borderColor = 'border-white',
+  style,
 }: {
   backgroundColor: string
   children: React.ReactNode
   className?: string
   borderColor?: 'border-white' | 'border-black'
+  style?: React.CSSProperties
 }) {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" style={style}>
       <div className="flex items-center justify-center w-full h-full">
         <div
           className={cn(

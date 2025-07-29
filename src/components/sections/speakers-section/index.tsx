@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { speakers } from '@/constants/speakers'
 import Lanyard from '@/components/lanyard'
 
@@ -23,7 +25,9 @@ const SpeakersSection = () => {
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">
-          <Button showArrow>Apply to speak</Button>
+          <Link href="#">
+            <Button showArrow>Apply to speak</Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import venue from '@public/venue.png'
 
@@ -28,9 +29,11 @@ const Venue = () => {
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-center">
-          <Button showArrow variant="white">
-            Get Tickets
-          </Button>
+          <Link href="#">
+            <Button showArrow variant="white">
+              Get Tickets
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

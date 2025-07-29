@@ -28,7 +28,7 @@ export default function Navbar() {
             <SheetDescription className="sr-only">
               Access navigation links and menu options
             </SheetDescription>
-            <Link className="mr-6 hidden lg:flex" href="#" prefetch={false}>
+            <Link className="mr-6 hidden lg:flex" href="/" prefetch={false}>
               <Image
                 alt="logo"
                 height={100}
@@ -50,7 +50,7 @@ export default function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
-        <Link className="mr-6 hidden lg:flex" href="#" prefetch={false}>
+        <Link className="mr-6 hidden lg:flex" href="/" prefetch={false}>
           <Image
             alt="logo"
             height={150}
@@ -70,7 +70,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Link className="ml-6" href="/register">
+          <Link className="ml-6" href="#">
             <Button showArrow>Get Tickets</Button>
           </Link>
         </nav>

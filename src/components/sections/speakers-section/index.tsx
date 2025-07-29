@@ -1,13 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { Button } from '../../ui/button'
-import { speakers } from '@/constants/speakers'
-import SpeakerCard from './speaker-card'
-
 const SpeakerSection = () => {
   return (
-    <section></section>
+    <section />
     // <section className="bg-[#FCF4F4] p-6 sm:p-12 md:p-16 lg:p-24 xl:p-[96px] w-full min-h-[400px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] xl:min-h-[880px]">
     //   <div className="flex flex-col gap-8 sm:gap-12 md:gap-14 lg:gap-16 w-full ">
     //     <div className="flex flex-col xl:flex-row gap-4 w-full items-center justify-between">

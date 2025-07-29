@@ -18,7 +18,7 @@ const SpeakersSection = () => {
           titleColor="black"
         />
 
-        <div className="grid lg:grid-cols-3 gap-10 my-10">
+        <div className="grid lg:grid-cols-3 items-center justify-center gap-10 my-10">
           {speakers.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}

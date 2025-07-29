@@ -5,6 +5,7 @@ const GdgIlorin = ({ color }: { color: 'white' | 'black' }) => {
 
   return (
     <svg
+      className="w-[280px] sm:w-[320px] lg:w-[372px]"
       fill="none"
       height="39"
       viewBox="0 0 372 39"

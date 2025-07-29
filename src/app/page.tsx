@@ -1,17 +1,21 @@
 import Hero from '@/components/hero'
-import Events from '@/components/events'
-import Venue from '@/components/venue'
-import SpeakerSection from '@/components/speakers/speakers-section'
-import SponsorSection from '@/components/sponsors/sponsors-section'
+import RecapsSection from '@/components/sections/recaps-section'
+import EventsSection from '@/components/sections/events-section'
+import VenueSection from '@/components/sections/venues-section'
+import SpeakersSection from '@/components/sections/speakers-section'
+import SponsorsSection from '@/components/sections/sponsors-section'
+import PartnersAndTicketsSection from '@/components/sections/partners-and-tickets-section'
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Events />
-      <Venue />
-      <SpeakerSection />
-      <SponsorSection />
+      <RecapsSection />
+      <EventsSection />
+      <VenueSection />
+      <SpeakersSection />
+      <SponsorsSection />
+      <PartnersAndTicketsSection />
     </div>
   )
 }

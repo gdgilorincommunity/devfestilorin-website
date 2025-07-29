@@ -1,11 +1,11 @@
 import Hero from '@/components/hero'
-import Recaps from '@/components/recaps'
+import RecapsSection from '@/components/sections/recaps-section'
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Recaps />
+      <RecapsSection />
     </div>
   )
 }

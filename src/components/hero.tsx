@@ -76,7 +76,7 @@ const Hero = () => {
       x: '75%',
       y: '10%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'AI Developers',
@@ -84,7 +84,7 @@ const Hero = () => {
       x: '80%',
       y: '20%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Gemini',
@@ -100,7 +100,7 @@ const Hero = () => {
       x: '60%',
       y: '40%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Firebase studio',
@@ -124,7 +124,7 @@ const Hero = () => {
       x: '85%',
       y: '70%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Brand Designers',
@@ -132,7 +132,7 @@ const Hero = () => {
       x: '15%',
       y: '70%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Web',
@@ -156,7 +156,7 @@ const Hero = () => {
       x: '25%',
       y: '85%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Developers',
@@ -164,7 +164,7 @@ const Hero = () => {
       x: '90%',
       y: '50%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'VR & AR',
@@ -172,7 +172,7 @@ const Hero = () => {
       x: '10%',
       y: '30%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Developers',
@@ -180,7 +180,7 @@ const Hero = () => {
       x: '55%',
       y: '60%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'Techies',
@@ -196,7 +196,7 @@ const Hero = () => {
       x: '75%',
       y: '35%',
       angle: 0,
-      showOnMobile: false,
+      showOnMobile: true,
     },
     {
       text: 'AI/ML',
@@ -212,8 +212,11 @@ const Hero = () => {
   const visibleTags = isMobile ? tags.filter((tag) => tag.showOnMobile) : tags
 
   return (
-    <div ref={inViewRef} className="bg-[#FCF4F4] min-h-screen">
-      <section className="max-w-7xl mx-auto px-6 py-10 md:py-20">
+    <div
+      ref={inViewRef}
+      className="bg-[#FCF4F4] min-h-[calc(100vh-90px)] md:min-h-0 md:py-32 relative overflow-hidden"
+    >
+      <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[500px] mx-auto">
           <h1 className="text-[74px] font-bold text-center leading-[100%]">
             Devfest <br className="hidden md:block" /> Ilorin
@@ -224,11 +227,13 @@ const Hero = () => {
             Ilorin&apos;s largest tech celebration of the year!
           </p>
 
-          <Link href="/tickets">
+          <Link href="#">
             <Button showArrow>Get Tickets</Button>
           </Link>
         </div>
+      </section>
 
+      <div className="absolute inset-0 pointer-events-none z-20">
         <Gravity
           ref={gravityRef}
           autoStart={false}
@@ -251,7 +256,7 @@ const Hero = () => {
             </MatterBody>
           ))}
         </Gravity>
-      </section>
+      </div>
     </div>
   )
 }

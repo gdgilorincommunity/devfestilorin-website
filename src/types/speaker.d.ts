@@ -1,6 +1,11 @@
+import { StaticImageData } from 'next/image'
+
 export interface Speaker {
-  image: string | StaticImageData
+  id: number
   name: string
-  role: string
-  day: 'conference' | 'workshop' | 'panelist'
+  image: StaticImageData | string
+  title: string
+  company: string
+  type: string
+  color: string
 }

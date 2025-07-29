@@ -1,4 +1,4 @@
 export interface Partner {
-  src: string | StaticImageData
+  logo: string | StaticImageData
   name: string
 }

@@ -4,6 +4,7 @@ import EventsSection from '@/components/sections/events-section'
 import VenueSection from '@/components/sections/venues-section'
 import SpeakersSection from '@/components/sections/speakers-section'
 import SponsorsSection from '@/components/sections/sponsors-section'
+import PartnersAndTicketsSection from '@/components/sections/partners-and-tickets-section'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <VenueSection />
       <SpeakersSection />
       <SponsorsSection />
+      <PartnersAndTicketsSection />
     </div>
   )
 }

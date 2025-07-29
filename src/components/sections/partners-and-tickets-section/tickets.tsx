@@ -17,7 +17,7 @@ const Tickets = () => {
         titleColor="black"
       />
 
-      <div className="grid lg:grid-cols-4 gap-10 mt-10">
+      <div className="grid lg:grid-cols-4 gap-6 mt-10">
         {tickets.map(
           ({ backgroundColor, day, type, price, textColor }, index) => (
             <aside

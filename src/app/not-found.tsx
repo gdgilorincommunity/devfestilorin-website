@@ -9,7 +9,7 @@ import GravityTags from '@/components/gravity-tags'
 const NotFound = () => {
   return (
     <div className="bg-[#FCF4F4] h-[calc(100vh-80px)] md:h-[calc(100vh-160px)] relative overflow-hidden">
-      <div className="absolute inset-0 z-50">
+      <div className="absolute inset-0 z-50 hidden lg:block">
         <GravityTags />
       </div>
 

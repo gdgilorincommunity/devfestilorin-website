@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 
-import Greeting from './greeting'
+import Example from './example'
 
 describe('Greeting Component', () => {
   it('renders the correct greeting message', () => {
-    render(<Greeting name="World" />)
+    render(<Example name="World" />)
 
     const headingElement = screen.getByText(/Hello, World!/i)
 
@@ -12,7 +12,7 @@ describe('Greeting Component', () => {
   })
 
   it('displays the button', () => {
-    render(<Greeting name="Test" />)
+    render(<Example name="Test" />)
     const buttonElement = screen.getByRole('button', { name: /click me/i })
 
     expect(buttonElement).toBeInTheDocument()
@@ -21,7 +21,7 @@ describe('Greeting Component', () => {
   it('handles button click (example of interaction)', () => {
     const mockOnButtonClick = jest.fn()
 
-    render(<Greeting name="User" onButtonClick={mockOnButtonClick} />)
+    render(<Example name="User" onButtonClick={mockOnButtonClick} />)
     const buttonElement = screen.getByRole('button', { name: /click me/i })
 
     // Simulate a click event

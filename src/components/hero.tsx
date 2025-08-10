@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import React from 'react'
 
+import config from '@/config'
+
 import { Button } from './ui/button'
 import GravityTags from './gravity-tags'
 
@@ -20,7 +22,11 @@ const Hero = () => {
             Ilorin&apos;s largest tech celebration of the year!
           </p>
 
-          <Link href="#">
+          <Link
+            href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Button showArrow>Get Tickets</Button>
           </Link>
         </div>

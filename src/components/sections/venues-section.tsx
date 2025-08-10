@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import venue from '@public/venue.png'
+import config from '@/config'
 
 import Lanyard from '../lanyard'
 import { Button } from '../ui/button'
@@ -29,7 +30,11 @@ const Venue = () => {
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-center">
-          <Link href="#">
+          <Link
+            href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Button showArrow variant="white">
               Get Tickets
             </Button>

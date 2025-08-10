@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 
 import Lanyard from '@/components/lanyard'
 import { Button } from '@/components/ui/button'
 import { tickets } from '@/constants/tickets'
 import GrayTicketLanyard from '@public/gray-ticket-lanyard.png'
 import ticketLanyard from '@public/ticket-lanyard.png'
+import config from '@/config'
 
 const Tickets = () => {
   return (
@@ -63,10 +65,15 @@ const Tickets = () => {
                         maximumFractionDigits: 0,
                       })}
                 </h2>
-
-                <Button showArrow variant={index === 3 ? 'white' : 'default'}>
-                  Get Ticket
-                </Button>
+                <Link
+                  href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Button showArrow variant={index === 3 ? 'white' : 'default'}>
+                    Get Ticket
+                  </Button>
+                </Link>
               </div>
             </aside>
           ),

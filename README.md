@@ -38,13 +38,13 @@ cd devfest-ilorin2025
 3. Install dependencies
 
 ```bash
-npm install or yarn install
+pnpm install
 ```
 
 4. Preprare husky installation
 
 ```bash
-npm run prepare
+pnpm prepare
 ```
 
 ### Running the Project Locally

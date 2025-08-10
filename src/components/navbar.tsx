@@ -11,6 +11,7 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet'
 import { menuLinks } from '@/constants/menu-links'
+import config from '@/config'
 
 export default function Navbar() {
   return (
@@ -70,7 +71,12 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Link className="ml-6" href="#">
+          <Link
+            className="ml-6"
+            href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Button showArrow>Get Tickets</Button>
           </Link>
         </nav>

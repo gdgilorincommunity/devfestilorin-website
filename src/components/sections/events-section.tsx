@@ -10,6 +10,7 @@ import workshops from '@public/workshops.png'
 import hackathons from '@public/hackathons.png'
 import privateNetwork from '@public/private-network.png'
 import gdgLanyard from '@public/gdg-lanyard.png'
+import config from '@/config'
 
 import { Button } from '../ui/button'
 import CornerBox from '../corner-box'
@@ -108,7 +109,11 @@ const EventsSection: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 mt-8 flex justify-center">
-          <Link href="#">
+          <Link
+            href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Button showArrow>Get Tickets</Button>
           </Link>
         </div>

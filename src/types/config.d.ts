@@ -3,4 +3,5 @@ export interface IConfig {
   nodeEnv: string
   appName: string
   appUrl: string
+  ticketUrl: string
 }

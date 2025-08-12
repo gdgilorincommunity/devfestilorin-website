@@ -26,10 +26,9 @@ export default function TagScroller({
     triggerOnce: false,
   })
 
-  // Loop animation
   const startAnimation = () => {
     controls.start({
-      x: ['0%', '-100%'],
+      x: ['0%', '-50%'],
       transition: {
         ease: 'linear',
         duration: 100,
@@ -54,10 +53,11 @@ export default function TagScroller({
     >
       <motion.div
         animate={controls}
-        className="flex gap-4 w-max"
+        className="flex gap-4 w-max will-change-transform" // GPU acceleration
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
+        {/* Duplicate tags for seamless loop */}
         {[...tags, ...tags].map((tag, idx) => (
           <span
             key={idx}

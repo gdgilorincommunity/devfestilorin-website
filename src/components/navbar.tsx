@@ -16,13 +16,19 @@ import config from '@/config'
 export default function Navbar() {
   return (
     <div className="bg-[#FCF4F4]">
-      <header className="max-w-7xl mx-auto px-6 py-10 md:py-20 flex h-20 w-full shrink-0 items-center">
+      <header className="max-w-7xl mx-auto px-6 py-10 md:py-20 flex h-20 w-full shrink-0 items-center justify-between">
         <Sheet>
-          <SheetTrigger asChild>
-            <Button className="lg:hidden" size="icon" variant="outline">
-              <MenuIcon className="h-6 w-6" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
+          <SheetTrigger asChild className="order-2">
+            <div className="p-3 rounded-full bg-black">
+              <Button
+                className="lg:hidden bg-white size-8"
+                size="icon"
+                variant="outline"
+              >
+                <MenuIcon className="h-6 w-6" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </div>
           </SheetTrigger>
           <SheetContent side="left">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
@@ -51,7 +57,7 @@ export default function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
-        <Link className="mr-6 hidden lg:flex" href="/" prefetch={false}>
+        <Link className="mr-6" href="/" prefetch={false}>
           <Image
             alt="logo"
             height={150}

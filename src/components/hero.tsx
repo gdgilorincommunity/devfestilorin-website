@@ -33,7 +33,7 @@ const Hero = () => {
   ]
 
   return (
-    <div className="bg-[#FCF4F4] min-h-[calc(100vh-350px)] md:min-h-full md:pb-32 relative overflow-hidden">
+    <div className="bg-[#FCF4F4] md:min-h-full pb-12 md:pb-32 relative overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6 max-w-[500px] mx-auto">
           <h1 className="text-[74px] font-bold text-center leading-[100%]">

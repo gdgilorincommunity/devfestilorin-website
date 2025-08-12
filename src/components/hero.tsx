@@ -10,6 +10,28 @@ import GravityTags from './gravity-tags'
 import TagScroller from './ui/tag-scroller'
 
 const Hero = () => {
+  const tags = [
+    { label: 'AI Enthusiast', color: 'bg-[#CCF6C5]' },
+    { label: 'Cybersecurity', color: 'bg-[#57CAFF]' },
+    { label: 'Gemini', color: 'bg-[#FFD427]' },
+    { label: 'Firebase Studio', color: 'bg-[#57CAFF]' },
+    { label: 'Cloud', color: 'bg-[#FF7DAF]' },
+    { label: 'Web', color: 'bg-[#5CDB6D]' },
+    { label: 'AI Enthusiast', color: 'bg-[#C3ECF6]' },
+    { label: 'Developers', color: 'bg-[#EEEFEF]' },
+    { label: 'AR & VR', color: 'bg-[#FFE7A5]' },
+    { label: 'Vibe Coding', color: 'bg-[#FF7DAF]' },
+    { label: 'AI Developers', color: 'bg-[#CCF6C5]' },
+    { label: 'Product Designers', color: 'bg-[#FFE7A5]' },
+    { label: 'Brand Designers', color: 'bg-[#F8D8D8]' },
+    { label: 'Mobile Devs', color: 'bg-[#FFD427]' },
+    { label: 'Techies', color: 'bg-[#CCF6C5]' },
+    { label: 'AI/ML', color: 'bg-[#5CDB6D]' },
+    { label: 'Hackathon', color: 'bg-[#EEEFEF]' },
+    { label: 'Web3 Ethusiasts', color: 'bg-[#F8D8D8]' },
+    { label: '+ more', color: 'bg-[#C3ECF6]' },
+  ]
+
   return (
     <div className="bg-[#FCF4F4] min-h-[calc(100vh-350px)] md:min-h-full md:pb-32 relative overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
@@ -36,7 +58,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-50 hidden lg:block">
         <GravityTags />
       </div>
-      <TagScroller className="flex md:hidden" />
+      <TagScroller className="flex md:hidden" tags={tags} />
     </div>
   )
 }

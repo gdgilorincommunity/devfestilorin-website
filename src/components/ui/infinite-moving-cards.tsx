@@ -77,7 +77,7 @@ export const InfiniteMovingCards = ({
       } else if (speed === 'normal') {
         containerRef.current.style.setProperty('--animation-duration', '12s')
       } else {
-        containerRef.current.style.setProperty('--animation-duration', '25s')
+        containerRef.current.style.setProperty('--animation-duration', '100s')
       }
     }
   }

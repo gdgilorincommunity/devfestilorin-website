@@ -1,15 +1,18 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 import { ContentItem } from '@/types/recap'
 import { Partner } from '@/types/partner'
+import { Speaker } from '@/types/speaker'
+import SpeakerCard  from '@/components/sections/speakers-section/speaker-card'
+
 
 import CornerBox from '../corner-box'
 
-type MovingCardItem = ContentItem | Partner
+type MovingCardItem = ContentItem | Partner | Speaker
 
 interface InfiniteMovingCardsProps {
   items: MovingCardItem[]
@@ -17,13 +20,13 @@ interface InfiniteMovingCardsProps {
   speed?: 'fast' | 'normal' | 'slow'
   pauseOnHover?: boolean
   className?: string
-  itemType?: 'recap' | 'partner'
+  itemType?: 'recap' | 'partner' | 'speaker'
 }
 
 export const InfiniteMovingCards = ({
   items,
   direction = 'left',
-  speed = 'fast',
+  speed = 'normal',
   pauseOnHover = true,
   className,
   itemType = 'recap',
@@ -73,9 +76,9 @@ export const InfiniteMovingCards = ({
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '8s')
+        containerRef.current.style.setProperty('--animation-duration', '20s')
       } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '12s')
+        containerRef.current.style.setProperty('--animation-duration', '70s')
       } else {
         containerRef.current.style.setProperty('--animation-duration', '100s')
       }
@@ -103,6 +106,10 @@ export const InfiniteMovingCards = ({
   const isPartner = (item: MovingCardItem): item is Partner => {
     return itemType === 'partner' && 'name' in item && 'logo' in item
   }
+
+  const isSpeaker = (item: MovingCardItem): item is Speaker => {
+  return itemType === 'speaker' && 'name' in item && 'image' in item
+}
 
   const renderRecapItem = (item: ContentItem, idx: number) => {
     if (isRecapBreakpoint(item)) {
@@ -158,11 +165,20 @@ export const InfiniteMovingCards = ({
     )
   }
 
+ const renderSpeakerItem = (item: Speaker, idx: number) => {
+  return (
+    <li key={idx} className="relative shrink-0 max-w-full">
+      <SpeakerCard speaker={item} />
+    </li>
+  )
+}
+
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 overflow-hidden',
+        'scroller relative z-20 overflow-hidden scroller-thin',
         // '[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className,
       )}
@@ -170,7 +186,7 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          'flex w-max min-w-full shrink-0 flex-nowrap gap-10 py-4',
+          'flex w-max min-w-full shrink-0 flex-nowrap gap-10 py-4 overflow-x-auto snap-x snap-mandatory',
           start && 'animate-scroll',
           pauseOnHover && 'hover:[animation-play-state:paused]',
         )}
@@ -184,6 +200,9 @@ export const InfiniteMovingCards = ({
             return renderPartnerItem(item, idx)
           }
 
+          if (itemType === 'speaker' && isSpeaker(item)) {
+          return renderSpeakerItem(item, idx)
+          }
           return null
         })}
       </ul>

@@ -1,69 +1,39 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import config from '@/config'
+import { useShuffledTagsOnMobile } from '@/hooks/use-shuffle'
 
 import { Button } from './ui/button'
 import GravityTags from './gravity-tags'
 import TagScroller from './ui/tag-scroller'
 
+const tags = [
+  { label: 'AI Enthusiast', color: 'bg-[#CCF6C5]' },
+  { label: 'Cybersecurity', color: 'bg-[#57CAFF]' },
+  { label: 'Gemini', color: 'bg-[#FFD427]' },
+  { label: 'Firebase Studio', color: 'bg-[#57CAFF]' },
+  { label: 'Cloud', color: 'bg-[#FF7DAF]' },
+  { label: 'Web', color: 'bg-[#5CDB6D]' },
+  { label: 'AI Enthusiast', color: 'bg-[#C3ECF6]' },
+  { label: 'Developers', color: 'bg-[#EEEFEF]' },
+  { label: 'AR & VR', color: 'bg-[#FFE7A5]' },
+  { label: 'Vibe Coding', color: 'bg-[#FF7DAF]' },
+  { label: 'AI Developers', color: 'bg-[#CCF6C5]' },
+  { label: 'Product Designers', color: 'bg-[#FFE7A5]' },
+  { label: 'Brand Designers', color: 'bg-[#F8D8D8]' },
+  { label: 'Mobile Devs', color: 'bg-[#FFD427]' },
+  { label: 'Techies', color: 'bg-[#CCF6C5]' },
+  { label: 'AI/ML', color: 'bg-[#5CDB6D]' },
+  { label: 'Hackathon', color: 'bg-[#EEEFEF]' },
+  { label: 'Web3 Ethusiasts', color: 'bg-[#F8D8D8]' },
+  { label: '+ more', color: 'bg-[#C3ECF6]' },
+]
+
 const Hero = () => {
-  const tags = [
-    { label: 'AI Enthusiast', color: 'bg-[#CCF6C5]' },
-    { label: 'Cybersecurity', color: 'bg-[#57CAFF]' },
-    { label: 'Gemini', color: 'bg-[#FFD427]' },
-    { label: 'Firebase Studio', color: 'bg-[#57CAFF]' },
-    { label: 'Cloud', color: 'bg-[#FF7DAF]' },
-    { label: 'Web', color: 'bg-[#5CDB6D]' },
-    { label: 'AI Enthusiast', color: 'bg-[#C3ECF6]' },
-    { label: 'Developers', color: 'bg-[#EEEFEF]' },
-    { label: 'AR & VR', color: 'bg-[#FFE7A5]' },
-    { label: 'Vibe Coding', color: 'bg-[#FF7DAF]' },
-    { label: 'AI Developers', color: 'bg-[#CCF6C5]' },
-    { label: 'Product Designers', color: 'bg-[#FFE7A5]' },
-    { label: 'Brand Designers', color: 'bg-[#F8D8D8]' },
-    { label: 'Mobile Devs', color: 'bg-[#FFD427]' },
-    { label: 'Techies', color: 'bg-[#CCF6C5]' },
-    { label: 'AI/ML', color: 'bg-[#5CDB6D]' },
-    { label: 'Hackathon', color: 'bg-[#EEEFEF]' },
-    { label: 'Web3 Ethusiasts', color: 'bg-[#F8D8D8]' },
-    { label: '+ more', color: 'bg-[#C3ECF6]' },
-  ]
-
-  const shuffledTags = useMemo(() => {
-    const arr = [...tags]
-
-    // Shuffle array (Fisher–Yates)
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-
-      ;[arr[i], arr[j]] = [arr[j], arr[i]]
-    }
-
-    // Avoid adjacent duplicates (label or color)
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (
-        arr[i].label === arr[i + 1].label ||
-        arr[i].color === arr[i + 1].color
-      ) {
-        const swapIndex = arr.findIndex(
-          (t, idx) =>
-            idx > i + 1 &&
-            t.label !== arr[i].label &&
-            t.color !== arr[i].color &&
-            arr[i + 1].label !== arr[idx - 1]?.label &&
-            arr[i + 1].color !== arr[idx - 1]?.color,
-        )
-
-        if (swapIndex > -1)
-          [arr[i + 1], arr[swapIndex]] = [arr[swapIndex], arr[i + 1]]
-      }
-    }
-
-    return arr
-  }, [tags])
+  const shuffledTags = useShuffledTagsOnMobile(tags)
 
   return (
     <div className="bg-[#FCF4F4] md:min-h-full pb-12 md:pb-32 relative overflow-hidden">

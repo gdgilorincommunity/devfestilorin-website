@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import config from '@/config'
 
@@ -32,6 +32,39 @@ const Hero = () => {
     { label: '+ more', color: 'bg-[#C3ECF6]' },
   ]
 
+  const shuffledTags = useMemo(() => {
+    const arr = [...tags]
+
+    // Shuffle array (Fisher–Yates)
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+
+      ;[arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+
+    // Avoid adjacent duplicates (label or color)
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (
+        arr[i].label === arr[i + 1].label ||
+        arr[i].color === arr[i + 1].color
+      ) {
+        const swapIndex = arr.findIndex(
+          (t, idx) =>
+            idx > i + 1 &&
+            t.label !== arr[i].label &&
+            t.color !== arr[i].color &&
+            arr[i + 1].label !== arr[idx - 1]?.label &&
+            arr[i + 1].color !== arr[idx - 1]?.color,
+        )
+
+        if (swapIndex > -1)
+          [arr[i + 1], arr[swapIndex]] = [arr[swapIndex], arr[i + 1]]
+      }
+    }
+
+    return arr
+  }, [tags])
+
   return (
     <div className="bg-[#FCF4F4] md:min-h-full pb-12 md:pb-32 relative overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 py-10 md:py-20 relative z-10">
@@ -58,7 +91,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-50 hidden lg:block">
         <GravityTags />
       </div>
-      <TagScroller className="flex md:hidden" tags={tags} />
+      <TagScroller className="flex md:hidden" tags={shuffledTags} />
     </div>
   )
 }

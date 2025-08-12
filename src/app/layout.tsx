@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   icons: [
     {
-      url: `${appUrl}icon.ico` || GdgLogo.src,
+      url: `${appUrl}favicon.ico` || GdgLogo.src,
       type: 'image/png',
       sizes: '32x32',
     },

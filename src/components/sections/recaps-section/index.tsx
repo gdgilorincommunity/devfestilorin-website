@@ -27,7 +27,7 @@ const RecapsSection = () => {
             direction="left"
             items={sortedContent}
             pauseOnHover={true}
-            speed="normal"
+            speed="slow"
           />
         </div>
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 mt-8 flex justify-end">

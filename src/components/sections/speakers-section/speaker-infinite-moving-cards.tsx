@@ -1,16 +1,16 @@
 'use client'
 
-import { ContentItem } from '@/types/recap'
+import { Speaker } from '@/types/speaker'
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 
-export const RecapsInfiniteMovingCards = ({
+export const SpeakersInfiniteMovingCards = ({
   items,
   direction = 'left',
   speed = 'normal',
   pauseOnHover = true,
   className,
 }: {
-  items: ContentItem[]
+  items: Speaker[]
   direction?: 'left' | 'right'
   speed?: 'fast' | 'normal' | 'slow'
   pauseOnHover?: boolean
@@ -20,7 +20,7 @@ export const RecapsInfiniteMovingCards = ({
     <InfiniteMovingCards
       className={className}
       direction={direction}
-      itemType="recap"
+      itemType="speaker"
       items={items}
       pauseOnHover={pauseOnHover}
       speed={speed}

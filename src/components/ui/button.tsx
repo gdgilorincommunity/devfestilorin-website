@@ -63,13 +63,13 @@ function Button({
       {showArrow && (
         <span
           className={cn(
-            'flex items-center justify-center rounded-[34px] p-1',
+            'flex items-center justify-center py-1 px-2 rounded-lg',
             variant === 'white' ? 'bg-black' : 'bg-white',
           )}
         >
           <MoveUpRight
-            className="size-4"
-            color={variant === 'white' ? '#ffffff' : '#000000'}
+          className="size-5"
+          color={variant === 'white' ? '#ffffff' : '#000000'}
           />
         </span>
       )}

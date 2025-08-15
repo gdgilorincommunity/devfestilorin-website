@@ -1,14 +1,13 @@
 'use client'
 
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 import { ContentItem } from '@/types/recap'
 import { Partner } from '@/types/partner'
 import { Speaker } from '@/types/speaker'
-import SpeakerCard  from '@/components/sections/speakers-section/speaker-card'
-
+import SpeakerCard from '@/components/sections/speakers-section/speaker-card'
 
 import CornerBox from '../corner-box'
 
@@ -108,8 +107,8 @@ export const InfiniteMovingCards = ({
   }
 
   const isSpeaker = (item: MovingCardItem): item is Speaker => {
-  return itemType === 'speaker' && 'name' in item && 'image' in item
-}
+    return itemType === 'speaker' && 'name' in item && 'image' in item
+  }
 
   const renderRecapItem = (item: ContentItem, idx: number) => {
     if (isRecapBreakpoint(item)) {
@@ -165,20 +164,19 @@ export const InfiniteMovingCards = ({
     )
   }
 
- const renderSpeakerItem = (item: Speaker, idx: number) => {
-  return (
-    <li key={idx} className="relative shrink-0 max-w-full">
-      <SpeakerCard speaker={item} />
-    </li>
-  )
-}
-
+  const renderSpeakerItem = (item: Speaker, idx: number) => {
+    return (
+      <li key={idx} className="relative shrink-0 max-w-full">
+        <SpeakerCard speaker={item} />
+      </li>
+    )
+  }
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 overflow-hidden scroller-thin',
+        'scroller relative z-20 pt-10 overflow-hidden md:overflow-visible',
         // '[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className,
       )}
@@ -201,8 +199,9 @@ export const InfiniteMovingCards = ({
           }
 
           if (itemType === 'speaker' && isSpeaker(item)) {
-          return renderSpeakerItem(item, idx)
+            return renderSpeakerItem(item, idx)
           }
+
           return null
         })}
       </ul>

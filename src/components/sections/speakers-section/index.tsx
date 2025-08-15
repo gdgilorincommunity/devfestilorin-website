@@ -28,7 +28,7 @@ const SpeakersSection = () => {
           speed="fast"
         />
 
-        <div className="pb-10 md:pb-20 mt-8 flex justify-end">
+        <div className="pb-10 md:pb-20 mt-14 flex justify-end">
           <Link href="#">
             <Button showArrow>Apply to speak</Button>
           </Link>

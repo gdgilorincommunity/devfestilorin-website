@@ -63,7 +63,7 @@ function Button({
       {showArrow && (
         <span
           className={cn(
-            'flex items-center justify-center rounded-[34px] p-1',
+            'flex items-center justify-center rounded-[34px] p-1 px-[7px]',
             variant === 'white' ? 'bg-black' : 'bg-white',
           )}
         >

@@ -21,7 +21,7 @@ const Tickets = () => {
 
       <div className="grid lg:grid-cols-4 gap-6 mt-10">
         {tickets.map(
-          ({ backgroundColor, day, type, price, textColor }, index) => (
+          ({ backgroundColor, day, type, textColor, url }, index) => (
             <aside
               key={index}
               className="border-2 border-[#1E1E1E] rounded-[25px] p-4"
@@ -56,17 +56,10 @@ const Tickets = () => {
                       '1px 0 black, -1px 0 black, 0 1px black, 0 -1px black',
                   }}
                 >
-                  {index === 3
-                    ? 'VIP’s'
-                    : price.toLocaleString('en-NG', {
-                        style: 'currency',
-                        currency: 'NGN',
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                      })}
+                  {index === 3 ? 'VIP’s' : 'Free'}
                 </h2>
                 <Link
-                  href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+                  href={`${url}?utm_source=${config.appUrl}`}
                   rel="noopener noreferrer"
                   target="_blank"
                 >

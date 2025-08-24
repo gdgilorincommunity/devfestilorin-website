@@ -4,4 +4,5 @@ export interface Ticket {
   price: number
   backgroundColor: string
   textColor: string
+  url?: string
 }

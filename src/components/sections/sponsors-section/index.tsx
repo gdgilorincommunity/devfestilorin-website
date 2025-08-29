@@ -39,7 +39,7 @@ const SponsorsSection = () => {
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">
           <Link
-            href="mailto:gdgilorincommunity@gmail.com"
+            href={`https://docs.google.com/forms/d/e/1FAIpQLSfaLjUEzGJxwsdmKJ0UQnRDwa-cV5IkJDDzYkVBBUvvDckR_Q/viewform?utm_source=${config.appUrl}`}
             rel="noreferrer noopener"
             target="_blank"
           >

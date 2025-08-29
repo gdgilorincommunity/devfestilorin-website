@@ -11,6 +11,7 @@ export const sponsors: Sponsor[] = [
     logo: kite,
     type: 'sponsor',
     link: 'https://www.usekite.co/',
+    category: 'Headline',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const sponsors: Sponsor[] = [
     logo: alveum,
     type: 'sponsor',
     link: 'https://www.alveum.com/',
+    category: 'Gold',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const sponsors: Sponsor[] = [
     logo: ihs,
     type: 'sponsor',
     link: 'https://www.iih.ng/',
+    category: 'Gold',
   },
   {
     id: 4,
@@ -32,5 +35,6 @@ export const sponsors: Sponsor[] = [
     logo: pixelPioneer,
     type: 'sponsor',
     link: 'https://www.open-designers.org/',
+    category: 'Silver',
   },
 ]

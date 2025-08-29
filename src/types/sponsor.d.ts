@@ -6,4 +6,5 @@ export interface Sponsor {
   logo: string | StaticImageData
   type: string
   link: string
+  category: string
 }

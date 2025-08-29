@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import Lanyard from '@/components/lanyard'
 import { sponsors } from '@/constants/sponsors'
+import config from '@/config'
 
 import { Button } from '../../ui/button'
 
@@ -19,7 +20,12 @@ const SponsorsSection = () => {
 
         <div className="grid lg:grid-cols-4 gap-10 my-10">
           {sponsors.map((sponsor, index) => (
-            <Link key={index} href={sponsor.link} target="_blank">
+            <Link
+              key={index}
+              href={`${sponsor.link}?utm_source=${config.appUrl}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
               <Image
                 key={index}
                 unoptimized
@@ -32,7 +38,11 @@ const SponsorsSection = () => {
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">
-          <Link href="#">
+          <Link
+            href="mailto:gdgilorincommunity@gmail.com"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
             <Button showArrow>Sponsor us</Button>
           </Link>
         </div>

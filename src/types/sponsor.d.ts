@@ -5,4 +5,5 @@ export interface Sponsor {
   name: string
   logo: string | StaticImageData
   type: string
+  link: string
 }

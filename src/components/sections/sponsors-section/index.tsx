@@ -17,15 +17,17 @@ const SponsorsSection = () => {
           titleColor="black"
         />
 
-        <div className="grid lg:grid-cols-3 gap-10 my-10">
+        <div className="grid lg:grid-cols-4 gap-10 my-10">
           {sponsors.map((sponsor, index) => (
-            <Image
-              key={index}
-              unoptimized
-              alt={sponsor.name}
-              className="w-full h-full object-contain"
-              src={sponsor.logo}
-            />
+            <Link key={index} href={sponsor.link} target="_blank">
+              <Image
+                key={index}
+                unoptimized
+                alt={sponsor.name}
+                className="w-[200px] h-full object-contain"
+                src={sponsor.logo}
+              />
+            </Link>
           ))}
         </div>
 

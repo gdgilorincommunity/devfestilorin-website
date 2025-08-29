@@ -22,6 +22,7 @@ const SponsorsSection = () => {
           {sponsors.map((sponsor, index) => (
             <Link
               key={index}
+              className="group hover:scale-105 transition-transform duration-300"
               href={`${sponsor.link}?utm_source=${config.appUrl}`}
               rel="noreferrer noopener"
               target="_blank"

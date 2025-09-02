@@ -44,8 +44,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-center text-2xl text-[#5D5D5D] font-bold text-[18px] leading-[28px]">
-            Join us at DevFest Ilorin 2025 from October 23rd - 25th.
-            Ilorin&apos;s largest tech celebration of the year!
+            Join us at DevFest Ilorin 2025 from October 30th–31st and November
+            1st, 2025. Ilorin&apos;s largest tech celebration of the year!
           </p>
 
           <Link

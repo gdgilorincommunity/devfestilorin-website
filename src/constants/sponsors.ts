@@ -1,11 +1,40 @@
 import { Sponsor } from '@/types'
 import pixelPioneer from '@public/sponsors/pixel-pioneer.png'
+import ihs from '@public/sponsors/ihs.png'
+// import kite from '@public/sponsors/kite.svg'
+import alveum from '@public/sponsors/alveum.png'
 
 export const sponsors: Sponsor[] = [
+  // {
+  //   id: 1,
+  //   name: 'Kite',
+  //   logo: kite,
+  //   type: 'sponsor',
+  //   link: 'https://www.usekite.co/',
+  //   category: 'Headline',
+  // },
   {
-    id: 1,
+    id: 2,
+    name: 'Alveum',
+    logo: alveum,
+    type: 'sponsor',
+    link: 'https://www.alveum.com/',
+    category: 'Gold',
+  },
+  {
+    id: 3,
+    name: 'IHS',
+    logo: ihs,
+    type: 'sponsor',
+    link: 'https://www.iih.ng/',
+    category: 'Gold',
+  },
+  {
+    id: 4,
     name: 'Pixel Pioneer',
     logo: pixelPioneer,
     type: 'sponsor',
+    link: 'https://www.open-designers.org/',
+    category: 'Silver',
   },
 ]

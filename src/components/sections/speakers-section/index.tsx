@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { speakers } from '@/constants/speakers'
 import Lanyard from '@/components/lanyard'
+import config from '@/config'
 
 import { Button } from '../../ui/button'
 
@@ -16,7 +17,7 @@ const SpeakersSection = () => {
         <Lanyard
           lanyardClassName="bg-[#fff]"
           textSize="large"
-          title="Our speakers"
+          title="Our Speakers"
           titleColor="black"
         />
 
@@ -29,7 +30,11 @@ const SpeakersSection = () => {
         />
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">
-          <Link href="#">
+          <Link
+            href={`https://tinyurl.com/dfispeakers25?utm_source=${config.appUrl}`}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
             <Button showArrow>Apply to speak</Button>
           </Link>
         </div>

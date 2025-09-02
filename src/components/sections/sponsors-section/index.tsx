@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import Lanyard from '@/components/lanyard'
 import { sponsors } from '@/constants/sponsors'
+import config from '@/config'
 
 import { Button } from '../../ui/button'
 
@@ -17,20 +18,32 @@ const SponsorsSection = () => {
           titleColor="black"
         />
 
-        <div className="grid lg:grid-cols-3 gap-10 my-10">
+        <div className="grid lg:grid-cols-4 gap-10 my-10">
           {sponsors.map((sponsor, index) => (
-            <Image
+            <Link
               key={index}
-              unoptimized
-              alt={sponsor.name}
-              className="w-full h-full object-contain"
-              src={sponsor.logo}
-            />
+              className="group hover:scale-105 transition-transform duration-300"
+              href={`${sponsor.link}?utm_source=${config.appUrl}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <Image
+                key={index}
+                unoptimized
+                alt={sponsor.name}
+                className="w-[200px] h-full object-contain"
+                src={sponsor.logo}
+              />
+            </Link>
           ))}
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">
-          <Link href="#">
+          <Link
+            href={`https://docs.google.com/forms/d/e/1FAIpQLSfaLjUEzGJxwsdmKJ0UQnRDwa-cV5IkJDDzYkVBBUvvDckR_Q/viewform?utm_source=${config.appUrl}`}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
             <Button showArrow>Sponsor us</Button>
           </Link>
         </div>

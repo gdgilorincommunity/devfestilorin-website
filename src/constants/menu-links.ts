@@ -9,10 +9,10 @@ export const menuLinks: MenuItem[] = [
   //   title: 'Schedule',
   //   path: '/schedule',
   // },
-  // {
-  //   title: 'Sponsors',
-  //   path: '/sponsors',
-  // },
+  {
+    title: 'Sponsors',
+    path: '/sponsors',
+  },
   // {
   //   title: 'Teams',
   //   path: '/teams',

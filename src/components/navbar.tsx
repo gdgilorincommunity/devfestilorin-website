@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
+import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -14,6 +15,16 @@ import { menuLinks } from '@/constants/menu-links'
 import config from '@/config'
 
 export default function Navbar() {
+  const pathname = usePathname()
+
+  const isActivePath = (path: string) => {
+    if (path === '/') {
+      return pathname === '/'
+    }
+
+    return pathname.startsWith(path)
+  }
+
   return (
     <div className="bg-[#FCF4F4]">
       <header className="max-w-7xl mx-auto px-6 py-10 md:py-20 flex h-20 w-full shrink-0 items-center justify-between">
@@ -47,7 +58,11 @@ export default function Navbar() {
               {menuLinks.map((item) => (
                 <Link
                   key={item.path}
-                  className="flex w-full items-center py-2 text-lg font-semibold"
+                  className={`flex w-full items-center py-2 text-lg font-semibold transition-colors ${
+                    isActivePath(item.path)
+                      ? 'text-[#2763E9]'
+                      : 'text-black hover:text-[#2763E9]'
+                  }`}
                   href={item.path}
                   prefetch={false}
                 >
@@ -69,7 +84,11 @@ export default function Navbar() {
           {menuLinks.map((item) => (
             <Link
               key={item.path}
-              className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 font-medium transition-all hover:underline focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+              className={`group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 font-medium transition-all hover:underline focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50 ${
+                isActivePath(item.path)
+                  ? 'text-[#2763E9]'
+                  : 'text-black hover:text-[#2763E9]'
+              }`}
               href={item.path}
               prefetch={false}
             >

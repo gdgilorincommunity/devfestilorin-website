@@ -17,7 +17,7 @@ const SpeakersSection = () => {
         <Lanyard
           lanyardClassName="bg-[#fff]"
           textSize="large"
-          title="Our speakers"
+          title="Our Speakers"
           titleColor="black"
         />
 

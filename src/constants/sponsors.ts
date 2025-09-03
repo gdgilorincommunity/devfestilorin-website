@@ -13,20 +13,21 @@ export const sponsors: Sponsor[] = [
   //   link: 'https://www.usekite.co/',
   //   category: 'Headline',
   // },
+
   {
     id: 2,
-    name: 'Alveum',
-    logo: alveum,
-    type: 'sponsor',
-    link: 'https://www.alveum.com/',
-    category: 'Gold',
-  },
-  {
-    id: 3,
     name: 'IHS',
     logo: ihs,
     type: 'sponsor',
     link: 'https://www.iih.ng/',
+    category: 'Gold',
+  },
+  {
+    id: 3,
+    name: 'Alveum',
+    logo: alveum,
+    type: 'sponsor',
+    link: 'https://www.alveum.com/',
     category: 'Gold',
   },
   {

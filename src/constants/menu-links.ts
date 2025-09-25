@@ -10,6 +10,10 @@ export const menuLinks: MenuItem[] = [
   //   path: '/schedule',
   // },
   {
+    title: 'Hackathon ₦1M+',
+    path: '/hackathon',
+  },
+  {
     title: 'Sponsors',
     path: '/sponsors',
   },

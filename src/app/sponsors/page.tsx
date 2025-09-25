@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 }
 
-const Sponsors = () => {
+export default function Sponsors() {
   const sortedSponsors = sponsors.sort((a, b) => {
     const categoryOrder = { Headline: 1, Gold: 2, Silver: 3 }
 
@@ -145,5 +145,3 @@ const Sponsors = () => {
     </div>
   )
 }
-
-export default Sponsors

@@ -3,6 +3,7 @@ import pixelPioneer from '@public/sponsors/pixel-pioneer.png'
 import ihs from '@public/sponsors/ihs.png'
 // import kite from '@public/sponsors/kite.svg'
 import alveum from '@public/sponsors/alveum.png'
+import malhub from '@public/sponsors/malhub.svg'
 
 export const sponsors: Sponsor[] = [
   // {
@@ -13,7 +14,6 @@ export const sponsors: Sponsor[] = [
   //   link: 'https://www.usekite.co/',
   //   category: 'Headline',
   // },
-
   {
     id: 2,
     name: 'IHS',
@@ -37,5 +37,13 @@ export const sponsors: Sponsor[] = [
     type: 'sponsor',
     link: 'https://www.open-designers.org/',
     category: 'Silver',
+  },
+  {
+    id: 5,
+    name: 'Malhub',
+    logo: malhub,
+    type: 'hackathon',
+    link: 'https://malhub.org/',
+    category: 'Hackathon',
   },
 ]

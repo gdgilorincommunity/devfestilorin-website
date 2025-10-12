@@ -93,20 +93,20 @@ export default function Hackathon() {
               title="Our Judges"
               titleColor="white"
             />
-          </div>
 
-          <div className="my-10 flex flex-wrap items-center justify-center gap-10">
-            {judges.map((judge, index) => (
-              <li
-                key={index}
-                className="relative shrink-0 max-w-full list-none"
-              >
-                <JudgeCard judge={judge} />
-              </li>
-            ))}
-          </div>
+            <div className="my-10 grid lg:grid-cols-3 gap-10">
+              {judges.map((judge, index) => (
+                <li
+                  key={index}
+                  className="relative shrink-0 max-w-full list-none"
+                >
+                  <JudgeCard judge={judge} />
+                </li>
+              ))}
+            </div>
 
-          <div className="pb-10" />
+            <div className="pb-10" />
+          </div>
         </div>
       </section>
       <PrizesSection />

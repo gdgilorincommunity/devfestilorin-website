@@ -5,4 +5,5 @@ export interface IConfig {
   appUrl: string
   ticketUrl: string
   hackathonUrl: string
+  workshopUrl: string
 }

@@ -6,6 +6,12 @@ import Hero from '@/components/hero'
 import { Button } from '@/components/ui/button'
 import config from '@/config'
 import { sponsors } from '@/constants/sponsors'
+import Lanyard from '@/components/lanyard'
+import JudgeCard from '@/components/judge-card'
+import { judges } from '@/constants/judges'
+import PrizesSection from '@/components/sections/prizes-section'
+import VenueSection from '@/components/sections/venues-section'
+import Tickets from '@/components/sections/partners-and-tickets-section/tickets'
 
 export const metadata: Metadata = {
   title: `Hackathon - ${config.appName}`,
@@ -66,7 +72,7 @@ export default function Hackathon() {
 
           <div className="flex justify-center mt-6">
             <Link
-              className="z-[100] pointer-events-auto"
+              className="z-[50] pointer-events-auto"
               href={`${config.hackathonUrl}?utm_source=${config.appUrl}`}
               rel="noopener noreferrer"
               target="_blank"
@@ -78,6 +84,34 @@ export default function Hackathon() {
           </div>
         </div>
       </Hero>
+      <section className="bg-[#1E1E1E]">
+        <div>
+          <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 mb-8">
+            <Lanyard
+              lanyardClassName="bg-[#FCF4F4]"
+              textSize="large"
+              title="Our Judges"
+              titleColor="white"
+            />
+          </div>
+
+          <div className="my-10 flex flex-wrap items-center justify-center gap-10">
+            {judges.map((judge, index) => (
+              <li
+                key={index}
+                className="relative shrink-0 max-w-full list-none"
+              >
+                <JudgeCard judge={judge} />
+              </li>
+            ))}
+          </div>
+
+          <div className="pb-10" />
+        </div>
+      </section>
+      <PrizesSection />
+      <VenueSection />
+      <Tickets />
     </div>
   )
 }

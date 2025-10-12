@@ -10,6 +10,7 @@ const config: IConfig = {
   appUrl: process.env.NEXT_PUBLIC_APP_URL!,
   ticketUrl: process.env.NEXT_PUBLIC_TICKET_URL!,
   hackathonUrl: process.env.NEXT_PUBLIC_HACKATHON_URL!,
+  workshopUrl: process.env.NEXT_PUBLIC_WORKSHOP_URL!,
 }
 
 export default config

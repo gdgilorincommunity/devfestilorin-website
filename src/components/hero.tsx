@@ -72,7 +72,7 @@ const DefaultHeroContent = () => {
 
       <div className="flex justify-center mt-6">
         <Link
-          className="z-[100] pointer-events-auto"
+          className="z-[50] pointer-events-auto"
           href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
           rel="noopener noreferrer"
           target="_blank"

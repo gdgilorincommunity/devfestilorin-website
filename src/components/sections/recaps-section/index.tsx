@@ -30,6 +30,7 @@ const RecapsSection = () => {
             speed="slow"
           />
         </div>
+
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 mt-8 flex justify-end">
           <Link href="https://devfest-ilorin24.vercel.app/2024">
             <Button showArrow variant="white">

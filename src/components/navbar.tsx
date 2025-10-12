@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
@@ -17,17 +19,23 @@ import config from '@/config'
 export default function Navbar() {
   const pathname = usePathname()
 
-  const isActivePath = (path: string) => {
-    if (path === '/') {
-      return pathname === '/'
-    }
+  const isActivePath = React.useCallback(
+    (path: string) => {
+      if (path === '/') {
+        return pathname === '/'
+      }
 
-    return pathname.startsWith(path)
-  }
+      return pathname.startsWith(path)
+    },
+    [pathname],
+  )
 
   return (
     <div className="bg-[#FCF4F4]">
-      <header className="max-w-7xl mx-auto px-6 py-10 md:py-20 flex h-20 w-full shrink-0 items-center justify-between">
+      <header
+        key={pathname}
+        className="max-w-7xl mx-auto px-6 py-10 md:py-20 flex h-20 w-full shrink-0 items-center justify-between"
+      >
         <Sheet>
           <SheetTrigger asChild className="order-2">
             <div className="lg:hidden py-4 px-5 rounded-4xl bg-black">

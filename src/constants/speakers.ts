@@ -19,7 +19,7 @@ export const speakers: Speaker[] = [
     image: sodiq,
     title: 'Community Lead',
     company: 'Google',
-    type: 'workshop',
+    type: 'conference',
     color: '#FF7DAF',
   },
   {

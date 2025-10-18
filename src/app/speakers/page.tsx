@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import { Metadata } from 'next'
+import { useState, useMemo } from 'react'
 
 import { Button } from '@/components/ui/button'
 import config from '@/config'
@@ -7,14 +9,21 @@ import { speakers } from '@/constants/speakers'
 import SpeakerCard from '@/components/sections/speakers-section/speaker-card'
 import Tickets from '@/components/sections/partners-and-tickets-section/tickets'
 
-export const metadata: Metadata = {
-  title: `Speakers - ${config.appName}`,
-  openGraph: {
-    title: `Speakers - ${config.appName}`,
-  },
-}
-
 const Page = () => {
+  const [selectedFilter, setSelectedFilter] = useState<string>('all')
+
+  const speakerTypes = useMemo(() => {
+    const types = Array.from(new Set(speakers.map((speaker) => speaker.type)))
+
+    return ['all', ...types]
+  }, [])
+
+  const filteredSpeakers = speakers.filter((speaker) => {
+    if (selectedFilter === 'all') return true
+
+    return speaker.type === selectedFilter
+  })
+
   return (
     <div>
       <section className="bg-[#FCF4F4]">
@@ -42,11 +51,34 @@ const Page = () => {
       </section>
 
       <section className="bg-[#FCF4F4]">
-        <div className="max-w-7xl mx-auto pt-10 md:pt-20 z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {speakers.map((speaker) => (
-              <div key={speaker.id}>
-                <SpeakerCard speaker={speaker} />
+        <div className="max-w-7xl mx-auto pt-5 md:pt-10 z-20">
+          <div className="flex justify-center gap-3 mb-10 flex-wrap px-4">
+            {speakerTypes.map((type) => {
+              const label =
+                type === 'all'
+                  ? 'All Speakers'
+                  : type.charAt(0).toUpperCase() + type.slice(1)
+
+              return (
+                <button
+                  key={type}
+                  className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base transition-all duration-200 ${
+                    selectedFilter === type
+                      ? 'bg-[#1E1E1E] text-white'
+                      : 'bg-[#CACACA] text-[#1E1E1E]'
+                  }`}
+                  onClick={() => setSelectedFilter(type)}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-4 md:px-6 lg:px-0">
+            {filteredSpeakers.map((speaker) => (
+              <div key={speaker.id} className="flex justify-center">
+                <SpeakerCard speaker={speaker} variant="responsive" />
               </div>
             ))}
           </div>

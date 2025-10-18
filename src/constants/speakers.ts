@@ -5,7 +5,12 @@ import chukwuemeka from '@public/speakers/chukwuemeka.png'
 import paul from '@public/speakers/paul.png'
 import halima from '@public/speakers/halima.png'
 import john from '@public/speakers/john.png'
-// import sodiq from '@public/speakers/sodiq.png'
+import adigbole from '@public/speakers/adigbole.png'
+import glory from '@public/speakers/glory.png'
+import goodness from '@public/speakers/goodness.png'
+import ahmed from '@public/speakers/ahmed.png'
+import daniel from '@public/speakers/daniel.png'
+import areous from '@public/speakers/areous.png'
 
 export const speakers: Speaker[] = [
   {
@@ -14,7 +19,7 @@ export const speakers: Speaker[] = [
     image: sodiq,
     title: 'Community Lead',
     company: 'Google',
-    type: 'conference',
+    type: 'workshop',
     color: '#FF7DAF',
   },
   {
@@ -33,7 +38,7 @@ export const speakers: Speaker[] = [
     title: 'Senior Software Engineer',
     company: 'Rocksteady Technology',
     type: 'conference',
-    color: '#F88181',
+    color: '#CCF6C5',
   },
   {
     id: 4,
@@ -42,7 +47,7 @@ export const speakers: Speaker[] = [
     title: 'CTO',
     company: 'Afrinvest West Africa',
     type: 'conference',
-    color: '#CCF6C5',
+    color: '#FF7DAF',
   },
   {
     id: 5,
@@ -59,6 +64,60 @@ export const speakers: Speaker[] = [
     image: john,
     title: 'Software Engineer',
     company: 'B2C',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 7,
+    name: 'Adigbole Osisioni',
+    image: adigbole,
+    title: 'Snr Product Designer',
+    company: 'MTN Nigeria ',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 8,
+    name: 'Glory Olaifa',
+    image: glory,
+    title: 'Android Engineer',
+    company: 'Bglow',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 9,
+    name: 'Goodness Adebayo O.',
+    image: goodness,
+    title: 'Senior Product Designer',
+    company: '',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 10,
+    name: 'Ahmed Olanrewaju',
+    image: ahmed,
+    title: 'Full Stack Engineer',
+    company: '',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 11,
+    name: 'Daniel Olowoniyi',
+    image: daniel,
+    title: 'Software Engineer',
+    company: 'Alveum',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 12,
+    name: 'Areous A. Ahmad',
+    image: areous,
+    title: 'Pixel Advocate',
+    company: '',
     type: 'conference',
     color: '#CCF6C5',
   },

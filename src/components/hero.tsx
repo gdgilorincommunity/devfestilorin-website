@@ -70,7 +70,18 @@ const DefaultHeroContent = () => {
         </div>
       </section>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-6 gap-4">
+        <Link
+          className="z-[50] pointer-events-auto"
+          href={`${config.workshopUrl}?utm_source=${config.appUrl}`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Button showArrow className="relative pointer-events-auto">
+            Get Tickets Day 1 & 2
+          </Button>
+        </Link>
+
         <Link
           className="z-[50] pointer-events-auto"
           href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
@@ -78,7 +89,7 @@ const DefaultHeroContent = () => {
           target="_blank"
         >
           <Button showArrow className="relative pointer-events-auto">
-            Get Tickets
+            Get Tickets Day 3
           </Button>
         </Link>
       </div>

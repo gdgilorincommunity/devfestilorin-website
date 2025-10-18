@@ -4,12 +4,23 @@ import { Speaker } from '@/types'
 
 interface SpeakerCardProps {
   speaker: Speaker
+  variant?: 'fixed' | 'responsive'
 }
 
-const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
+const SpeakerCard = ({ speaker, variant = 'fixed' }: SpeakerCardProps) => {
+  const containerClassName =
+    variant === 'responsive'
+      ? 'relative w-full max-w-[390px] mx-auto h-[420px] sm:h-[440px] md:h-[450px] lg:h-[460px] border-[2px] sm:border-[3px] border-black rounded-none'
+      : 'relative w-[280px] sm:w-[320px] md:w-[350px] lg:w-[390px] h-[320px] sm:h-[380px] md:h-[420px] lg:h-[460px] border-[2px] sm:border-[3px] border-black rounded-none'
+
+  const innerContainerClassName =
+    variant === 'responsive'
+      ? 'top-[8px] sm:top-[11px] left-[8px] sm:left-[11px] right-[8px] sm:right-[11px] bottom-[8px] sm:bottom-[11px] absolute overflow-hidden border-[2px] sm:border-[2.82px] border-[#1E1E1E]'
+      : 'top-[8px] sm:top-[11px] left-[8px] sm:left-[11px] w-[256px] sm:w-[290px] md:w-[320px] lg:w-[360px] h-[304px] sm:h-[350px] md:h-[380px] lg:h-[430px] relative overflow-hidden border-[2px] sm:border-[2.82px] border-[#1E1E1E]'
+
   return (
     <div
-      className="relative w-[280px] sm:w-[320px] md:w-[350px] lg:w-[390px] h-[320px] sm:h-[380px] md:h-[420px] lg:h-[460px] border-[2px] sm:border-[3px] border-black rounded-none"
+      className={containerClassName}
       style={{ backgroundColor: speaker.color }}
     >
       <div className="absolute -top-[6px] sm:-top-[9px] -left-[6px] sm:-left-[9px] w-[12px] sm:w-[18px] h-[12px] sm:h-[18px] bg-white border-[1px] sm:border-[2px] border-black z-10" />
@@ -25,7 +36,7 @@ const SpeakerCard = ({ speaker }: SpeakerCardProps) => {
         </div>
       </div>
 
-      <div className="top-[8px] sm:top-[11px] left-[8px] sm:left-[11px] w-[256px] sm:w-[290px] md:w-[320px] lg:w-[360px] h-[304px] sm:h-[350px] md:h-[380px] lg:h-[430px] relative overflow-hidden border-[2px] sm:border-[2.82px] border-[#1E1E1E]">
+      <div className={innerContainerClassName}>
         <Image
           fill
           alt={speaker.name}

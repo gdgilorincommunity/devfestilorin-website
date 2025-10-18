@@ -18,7 +18,7 @@ const SponsorsSection = () => {
           titleColor="black"
         />
 
-        <div className="grid lg:grid-cols-4 gap-10 my-10">
+        <div className="grid lg:grid-cols-5 gap-10 my-10">
           {sponsors.map((sponsor, index) => (
             <Link
               key={index}

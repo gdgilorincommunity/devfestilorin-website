@@ -17,7 +17,7 @@ export const speakers: Speaker[] = [
     id: 1,
     name: 'Sodiq Akinjobi',
     image: sodiq,
-    title: 'Community Lead',
+    title: 'Program manager',
     company: 'Google',
     type: 'conference',
     color: '#FF7DAF',

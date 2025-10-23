@@ -99,7 +99,7 @@ export const speakers: Speaker[] = [
     name: 'Ahmed Olanrewaju',
     image: ahmed,
     title: 'Full Stack Engineer',
-    company: '',
+    company: 'Indicina',
     type: 'conference',
     color: '#FF7DAF',
   },

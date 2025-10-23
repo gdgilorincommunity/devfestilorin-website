@@ -1,9 +1,9 @@
 'use client'
 
-import { useCallback, useState } from 'react'
-import { useRef } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 
 import DpForm from '@/components/dp/dp-form'
+import DpCanvas from '@/components/dp/dp-canvas'
 
 import red from '../../../public/dp/dp-1.png'
 import green from '../../../public/dp/dp-2.png'
@@ -21,12 +21,114 @@ const Page = () => {
   const [selectedColor, setSelectedColor] = useState('blue')
   const [profilePicture, setProfilePicture] = useState<string | null>(null)
 
-  const generate = useCallback(() => {
-    if (canvasRef.current && selectedColor) {
-      const canvas = canvasRef.current
-      const ctx = canvas.getContext('2d')
+  const loadImage = (src: string): Promise<HTMLImageElement> => {
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+
+      img.crossOrigin = 'anonymous'
+      img.src = src
+      img.onload = () => resolve(img)
+      img.onerror = () => reject(new Error(`Failed to load image: ${src}`))
+    })
+  }
+
+  const drawText = (
+    ctx: CanvasRenderingContext2D,
+    text: string,
+    centerX: number,
+    centerY: number,
+    fontSize: number,
+    letterSpacing: number,
+  ) => {
+    ctx.textAlign = 'left'
+    ctx.textBaseline = 'middle'
+    ctx.font = `${fontSize}px Arial, sans-serif`
+    ctx.fillStyle = '#000000'
+    ctx.strokeStyle = '#000000'
+    ctx.lineWidth = 2
+
+    const characters = text.split('')
+    const totalWidth =
+      characters.reduce(
+        (width, char) => width + ctx.measureText(char).width + letterSpacing,
+        0,
+      ) - letterSpacing
+    const baseX = centerX - totalWidth / 2
+
+    let currentX = baseX
+
+    characters.forEach((char) => {
+      ctx.strokeText(char, currentX, centerY)
+      ctx.fillText(char, currentX, centerY)
+      const charWidth = ctx.measureText(char).width
+
+      currentX += charWidth + letterSpacing
+    })
+  }
+
+  const generate = useCallback(async () => {
+    if (!canvasRef.current || !selectedColor) return
+
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
+
+    if (!ctx) return
+
+    const containerWidth = canvas.clientWidth
+    const devicePixelRatio = window.devicePixelRatio || 1
+    const resolution = 1024
+
+    // Set canvas resolution and display size
+    canvas.width = resolution * devicePixelRatio
+    canvas.height = resolution * devicePixelRatio
+    canvas.style.width = `${containerWidth}px`
+    canvas.style.height = `${containerWidth}px`
+
+    // Scale context for high-DPI displays
+    ctx.scale(devicePixelRatio, devicePixelRatio)
+    ctx.imageSmoothingEnabled = true
+    ctx.imageSmoothingQuality = 'high'
+
+    // Clear canvas
+    ctx.clearRect(0, 0, resolution, resolution)
+
+    try {
+      // Draw profile picture if available
+      if (profilePicture) {
+        const profileImg = await loadImage(profilePicture)
+
+        ctx.drawImage(profileImg, 0, 0, resolution, resolution)
+      }
+
+      // Draw frame
+      const frameSrc =
+        colors.find((color) => color.value === selectedColor)?.image || ''
+      const frameImage = await loadImage(frameSrc)
+
+      ctx.drawImage(frameImage, 0, 0, resolution, resolution)
+
+      // Draw text if present
+      if (name.trim()) {
+        drawText(ctx, name, resolution / 2 - 100, resolution * 0.85, 35, 2)
+      }
+    } catch (error) {
+      console.error(error)
+      // Optionally draw text even if images fail
+      if (name.trim()) {
+        drawText(ctx, name, resolution / 2 - 100, resolution * 0.85, 35, 2)
+      }
     }
-  }, [selectedColor])
+  }, [name, profilePicture, selectedColor])
+
+  useEffect(() => {
+    generate()
+
+    const handleResize = () => generate()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [generate])
 
   return (
     <div>
@@ -45,7 +147,7 @@ const Page = () => {
       </section>
 
       <section className="bg-[#FCF4F4]">
-        <div className="max-w-7xl mx-auto pb-10 md:pb-20 z-20">
+        <div className="max-w-5xl mx-auto pb-10 md:pb-20 z-20">
           <div className="grid lg:grid-cols-2 gap-10">
             <DpForm
               colors={colors}
@@ -55,13 +157,12 @@ const Page = () => {
               setProfilePicture={setProfilePicture}
               setSelectedColor={setSelectedColor}
             />
-
             <div className="flex justify-center lg:justify-end">
-              {/* <DpCanvas
-              name={name}
-              profilePicture={profilePicture}
-              canvasRef={canvasRef}
-            /> */}
+              <DpCanvas
+                canvasRef={canvasRef}
+                name={name}
+                profilePicture={profilePicture}
+              />
             </div>
           </div>
         </div>

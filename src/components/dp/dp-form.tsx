@@ -32,7 +32,7 @@ export default function DpForm({
         <Input
           className="bg-white h-14"
           id="name"
-          maxLength={13}
+          // maxLength={13}
           name="name"
           placeholder="Enter name or nickname"
           type="text"

@@ -1,10 +1,6 @@
-import 'cropperjs/dist/cropper.css'
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
-import Cropper, { ReactCropperElement } from 'react-cropper'
+import React, { useState } from 'react'
 import { Upload } from 'lucide-react'
-
-import { Button } from '../ui/button'
 
 interface CropImageProps {
   onCroppedImage: (croppedImage: string) => void
@@ -12,14 +8,50 @@ interface CropImageProps {
 
 const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
   const inputRef = React.useRef<HTMLInputElement | null>(null)
-  const cropperRef = useRef<ReactCropperElement>(null)
-  const [image, setImage] = useState<string | null>(null)
-  const [hideCropper, setHideCropper] = useState<boolean>(false)
   const [imgUrl, setImgUrl] = useState<string | null>(null)
 
   const handleClick = () => {
     if (inputRef.current) {
       inputRef.current.click()
+    }
+  }
+
+  const resizeImageToSquare = (
+    imageSrc: string,
+    callback: (resizedImage: string) => void,
+  ) => {
+    const img = new window.Image()
+
+    img.src = imageSrc
+
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      const ctx = canvas.getContext('2d')
+
+      if (!ctx) return
+
+      const size = 1024
+
+      canvas.width = size
+      canvas.height = size
+
+      // Enable high-quality rendering
+      ctx.imageSmoothingEnabled = true
+      ctx.imageSmoothingQuality = 'high'
+
+      // Calculate dimensions to cover the canvas (like CSS background-size: cover)
+      const scale = Math.max(size / img.width, size / img.height)
+      const scaledWidth = img.width * scale
+      const scaledHeight = img.height * scale
+      const x = (size - scaledWidth) / 2
+      const y = (size - scaledHeight) / 2
+
+      // Draw image centered and covering the entire canvas
+      ctx.drawImage(img, x, y, scaledWidth, scaledHeight)
+
+      const resizedImage = canvas.toDataURL('image/png')
+
+      callback(resizedImage)
     }
   }
 
@@ -29,38 +61,16 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
       const reader = new FileReader()
 
       reader.onload = () => {
-        setImage(reader.result as string) // Set new image
-        setHideCropper(false) // Ensure cropper shows again
-        setImgUrl(null) // Reset previous cropped image
+        const imageSrc = reader.result as string
+
+        // Automatically resize to 2048x2048
+        resizeImageToSquare(imageSrc, (resizedImage) => {
+          setImgUrl(resizedImage)
+          onCroppedImage(resizedImage)
+        })
       }
       reader.readAsDataURL(file)
     }
-  }
-
-  const onCrop = () => {
-    if (cropperRef.current) {
-      const cropper = cropperRef.current?.cropper
-
-      if (typeof cropperRef.current?.cropper !== 'undefined') {
-        const resultImage = cropper.getCroppedCanvas().toDataURL()
-
-        setImgUrl(resultImage as string)
-      }
-    }
-  }
-
-  const useCroppedImage = () => {
-    if (cropperRef.current) {
-      const cropper = cropperRef.current?.cropper
-
-      if (typeof cropperRef.current?.cropper !== 'undefined') {
-        const resultImage = cropper.getCroppedCanvas().toDataURL()
-
-        onCroppedImage(resultImage as string)
-      }
-    }
-
-    setHideCropper(!hideCropper)
   }
 
   return (
@@ -75,27 +85,6 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
         type="file"
         onChange={handleFileChange}
       />
-      {image && !hideCropper && (
-        <>
-          <Cropper
-            ref={cropperRef}
-            aspectRatio={1}
-            checkOrientation={false}
-            className="h-[400px] w-full"
-            crop={onCrop}
-            guides={true}
-            responsive={true}
-            src={image}
-            zoomable={false}
-          />
-
-          <div className="my-6 flex items-center justify-center">
-            <Button type="button" onClick={useCroppedImage}>
-              Save cropped image
-            </Button>
-          </div>
-        </>
-      )}
 
       <div
         className="rounded-lg bg-[#fff] h-[250px] p-1 cursor-pointer"

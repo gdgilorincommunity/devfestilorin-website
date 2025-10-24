@@ -1,57 +1,36 @@
+'use client'
+
 import Image from 'next/image'
-import React, { useState } from 'react'
-import { Upload } from 'lucide-react'
+import React, { useState, useRef } from 'react'
+import { Upload, ZoomIn, ZoomOut, RotateCw } from 'lucide-react'
+import Cropper, { ReactCropperElement } from 'react-cropper'
+import 'cropperjs/dist/cropper.css'
+
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 
 interface CropImageProps {
   onCroppedImage: (croppedImage: string) => void
 }
 
 const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
-  const inputRef = React.useRef<HTMLInputElement | null>(null)
-  const [imgUrl, setImgUrl] = useState<string | null>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  const cropperRef = useRef<ReactCropperElement>(null)
+  const [croppedImageUrl, setCroppedImageUrl] = useState<string | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [originalImage, setOriginalImage] = useState<string | null>(null)
 
   const handleClick = () => {
     if (inputRef.current) {
+      inputRef.current.value = ''
       inputRef.current.click()
-    }
-  }
-
-  const resizeImageToSquare = (
-    imageSrc: string,
-    callback: (resizedImage: string) => void,
-  ) => {
-    const img = new window.Image()
-
-    img.src = imageSrc
-
-    img.onload = () => {
-      const canvas = document.createElement('canvas')
-      const ctx = canvas.getContext('2d')
-
-      if (!ctx) return
-
-      const size = 1024
-
-      canvas.width = size
-      canvas.height = size
-
-      // Enable high-quality rendering
-      ctx.imageSmoothingEnabled = true
-      ctx.imageSmoothingQuality = 'high'
-
-      // Calculate dimensions to cover the canvas (like CSS background-size: cover)
-      const scale = Math.max(size / img.width, size / img.height)
-      const scaledWidth = img.width * scale
-      const scaledHeight = img.height * scale
-      const x = (size - scaledWidth) / 2
-      const y = (size - scaledHeight) / 2
-
-      // Draw image centered and covering the entire canvas
-      ctx.drawImage(img, x, y, scaledWidth, scaledHeight)
-
-      const resizedImage = canvas.toDataURL('image/png')
-
-      callback(resizedImage)
     }
   }
 
@@ -63,14 +42,49 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
       reader.onload = () => {
         const imageSrc = reader.result as string
 
-        // Automatically resize to 2048x2048
-        resizeImageToSquare(imageSrc, (resizedImage) => {
-          setImgUrl(resizedImage)
-          onCroppedImage(resizedImage)
-        })
+        setOriginalImage(imageSrc)
+        setIsDialogOpen(true)
       }
       reader.readAsDataURL(file)
+
+      e.target.value = ''
     }
+  }
+
+  const handleCrop = () => {
+    const cropper = cropperRef.current?.cropper
+
+    if (cropper) {
+      const canvas = cropper.getCroppedCanvas({
+        width: 1024,
+        height: 1024,
+        imageSmoothingEnabled: true,
+        imageSmoothingQuality: 'high',
+      })
+
+      const croppedImage = canvas.toDataURL('image/png')
+
+      setCroppedImageUrl(croppedImage)
+      onCroppedImage(croppedImage)
+      setIsDialogOpen(false)
+    }
+  }
+
+  const handleZoomIn = () => {
+    cropperRef.current?.cropper.zoom(0.1)
+  }
+
+  const handleZoomOut = () => {
+    cropperRef.current?.cropper.zoom(-0.1)
+  }
+
+  const handleRotate = () => {
+    cropperRef.current?.cropper.rotate(90)
+  }
+
+  const handleCancel = () => {
+    setIsDialogOpen(false)
+    setOriginalImage(null)
   }
 
   return (
@@ -98,7 +112,7 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
         }}
       >
         <div className="border-2 border-dashed rounded-lg p-1 h-full flex justify-center items-center">
-          {!imgUrl ? (
+          {!croppedImageUrl ? (
             <div className="flex flex-col gap-3 justify-center items-center">
               <Upload className="size-6" />
               <div className="text-center">
@@ -111,7 +125,7 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
               <Image
                 alt="photo"
                 height={150}
-                src={imgUrl as string}
+                src={croppedImageUrl}
                 width={150}
               />
               <div className="text-sm text-center mt-2 font-semibold">
@@ -121,6 +135,78 @@ const CropImage: React.FC<CropImageProps> = ({ onCroppedImage }) => {
           )}
         </div>
       </div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Crop Your Image</DialogTitle>
+            <DialogDescription>
+              Adjust the crop area to select the part of the image you want to
+              use for your DP. You can zoom and rotate the image as needed.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4">
+            <div className="w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
+              {originalImage && (
+                <Cropper
+                  ref={cropperRef}
+                  aspectRatio={1}
+                  autoCropArea={1}
+                  background={false}
+                  checkOrientation={false}
+                  guides={true}
+                  minCropBoxHeight={100}
+                  minCropBoxWidth={100}
+                  responsive={true}
+                  src={originalImage}
+                  style={{ height: '100%', width: '100%' }}
+                  viewMode={1}
+                />
+              )}
+            </div>
+
+            <div className="flex justify-center gap-2">
+              <Button
+                size="sm"
+                type="button"
+                variant="outline"
+                onClick={handleZoomIn}
+              >
+                <ZoomIn className="size-4" />
+                Zoom In
+              </Button>
+              <Button
+                size="sm"
+                type="button"
+                variant="outline"
+                onClick={handleZoomOut}
+              >
+                <ZoomOut className="size-4" />
+                Zoom Out
+              </Button>
+              <Button
+                size="sm"
+                type="button"
+                variant="outline"
+                onClick={handleRotate}
+              >
+                <RotateCw className="size-4" />
+                Rotate
+              </Button>
+            </div>
+          </div>
+
+          <DialogFooter>
+            <Button type="button" variant="outline" onClick={handleCancel}>
+              Cancel
+            </Button>
+            <Button type="button" onClick={handleCrop}>
+              Apply Crop
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

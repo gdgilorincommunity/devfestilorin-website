@@ -109,13 +109,27 @@ const Page = () => {
 
       // Draw text if present
       if (name.trim()) {
-        drawText(ctx, name, resolution / 2 - 100, resolution * 0.85, 35, 2)
+        drawText(
+          ctx,
+          name.slice(0, 30),
+          resolution / 2 - 100,
+          resolution * 0.85,
+          35,
+          2,
+        )
       }
     } catch (error) {
       console.error(error)
       // Optionally draw text even if images fail
       if (name.trim()) {
-        drawText(ctx, name, resolution / 2 - 100, resolution * 0.85, 35, 2)
+        drawText(
+          ctx,
+          name.slice(0, 30),
+          resolution / 2 - 100,
+          resolution * 0.85,
+          35,
+          2,
+        )
       }
     }
   }, [name, profilePicture, selectedColor])
@@ -133,7 +147,7 @@ const Page = () => {
   return (
     <div>
       <section className="bg-[#FCF4F4]">
-        <div className="max-w-7xl mx-auto pb-10 md:pb-20 z-20">
+        <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 z-20">
           <div className="lg:w-[1100px] mx-auto pt-10">
             <h1 className="text-wrap text-center mb-4 text-5xl lg:text-7xl font-extrabold tracking-tight leading-none text-[#1E1E1E]">
               Generate DP
@@ -147,7 +161,7 @@ const Page = () => {
       </section>
 
       <section className="bg-[#FCF4F4]">
-        <div className="max-w-5xl mx-auto pb-10 md:pb-20 z-20">
+        <div className="max-w-5xl mx-auto px-6 pb-10 md:pb-20 z-20">
           <div className="grid lg:grid-cols-2 gap-10">
             <DpForm
               colors={colors}
@@ -158,11 +172,11 @@ const Page = () => {
               setSelectedColor={setSelectedColor}
             />
             <div className="flex justify-center lg:justify-end">
-              <DpCanvas
+              {/* <DpCanvas
                 canvasRef={canvasRef}
                 name={name}
                 profilePicture={profilePicture}
-              />
+              /> */}
             </div>
           </div>
         </div>

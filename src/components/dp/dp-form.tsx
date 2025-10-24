@@ -28,11 +28,14 @@ export default function DpForm({
   return (
     <form noValidate className="space-y-8">
       <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
+        <div className="flex items-center justify-between">
+          <Label htmlFor="name">Name</Label>
+          <span className="text-xs text-gray-500">{name.length}/30</span>
+        </div>
         <Input
           className="bg-white h-14"
           id="name"
-          // maxLength={13}
+          maxLength={30}
           name="name"
           placeholder="Enter name or nickname"
           type="text"

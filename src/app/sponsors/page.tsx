@@ -41,7 +41,7 @@ export default function Sponsors() {
   return (
     <div>
       <section className="bg-[#FCF4F4]">
-        <div className="max-w-7xl mx-auto pb-10 md:pb-20 z-20">
+        <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 z-20">
           <div className="lg:w-[1100px] mx-auto pt-10">
             <h1 className="text-wrap text-center mb-4 text-5xl lg:text-7xl font-extrabold tracking-tight leading-none text-[#1E1E1E]">
               Our Sponsors

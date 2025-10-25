@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .ts,.tsx --fix --cache",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "jest",
     "test:watch": "jest --watch"
   },

@@ -77,7 +77,6 @@ const Page = () => {
     const containerWidth = canvas.clientWidth
     const resolution = 1600
 
-    // Set canvas resolution (fixed at 1024x1024 for consistent downloads)
     canvas.width = resolution
     canvas.height = resolution
     canvas.style.width = `${containerWidth}px`
@@ -91,21 +90,18 @@ const Page = () => {
     ctx.clearRect(0, 0, resolution, resolution)
 
     try {
-      // Draw profile picture if available
       if (profilePicture) {
         const profileImg = await loadImage(profilePicture)
 
         ctx.drawImage(profileImg, 0, 0, resolution, resolution)
       }
 
-      // Draw frame
       const frameSrc =
         colors.find((color) => color.value === selectedColor)?.image || ''
       const frameImage = await loadImage(frameSrc)
 
       ctx.drawImage(frameImage, 0, 0, resolution, resolution)
 
-      // Draw text if present
       if (name.trim()) {
         drawText(
           ctx,
@@ -117,8 +113,9 @@ const Page = () => {
         )
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error)
-      // Optionally draw text even if images fail
+
       if (name.trim()) {
         drawText(
           ctx,

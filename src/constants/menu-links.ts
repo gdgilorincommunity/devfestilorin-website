@@ -13,10 +13,10 @@ export const menuLinks: MenuItem[] = [
     title: 'Sponsors',
     path: '/sponsors',
   },
-  // {
-  //   title: 'Get DP',
-  //   path: '/get-dp',
-  // },
+  {
+    title: 'Get DP',
+    path: '/get-dp',
+  },
 
   // {
   //   title: 'Teams',

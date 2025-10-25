@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState, useRef } from 'react'
 
-import DpForm from '@/components/dp/dp-form'
 import DpCanvas from '@/components/dp/dp-canvas'
+import DpForm from '@/components/dp/dp-form'
 
 import red from '../../../public/dp/dp-1.png'
 import green from '../../../public/dp/dp-2.png'
@@ -75,17 +75,15 @@ const Page = () => {
     if (!ctx) return
 
     const containerWidth = canvas.clientWidth
-    const devicePixelRatio = window.devicePixelRatio || 1
-    const resolution = 1024
+    const resolution = 1600
 
-    // Set canvas resolution and display size
-    canvas.width = resolution * devicePixelRatio
-    canvas.height = resolution * devicePixelRatio
+    // Set canvas resolution (fixed at 1024x1024 for consistent downloads)
+    canvas.width = resolution
+    canvas.height = resolution
     canvas.style.width = `${containerWidth}px`
     canvas.style.height = `${containerWidth}px`
 
-    // Scale context for high-DPI displays
-    ctx.scale(devicePixelRatio, devicePixelRatio)
+    // Enable high-quality rendering
     ctx.imageSmoothingEnabled = true
     ctx.imageSmoothingQuality = 'high'
 
@@ -114,7 +112,7 @@ const Page = () => {
           name.slice(0, 30),
           resolution / 2 - 100,
           resolution * 0.85,
-          35,
+          60,
           2,
         )
       }
@@ -127,7 +125,7 @@ const Page = () => {
           name.slice(0, 30),
           resolution / 2 - 100,
           resolution * 0.85,
-          35,
+          60,
           2,
         )
       }
@@ -162,7 +160,7 @@ const Page = () => {
 
       <section className="bg-[#FCF4F4]">
         <div className="max-w-5xl mx-auto px-6 pb-10 md:pb-20 z-20">
-          <div className="grid lg:grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
             <DpForm
               colors={colors}
               name={name}
@@ -171,12 +169,12 @@ const Page = () => {
               setProfilePicture={setProfilePicture}
               setSelectedColor={setSelectedColor}
             />
-            <div className="flex justify-center lg:justify-end">
-              {/* <DpCanvas
+            <div className="w-full flex justify-center lg:justify-end">
+              <DpCanvas
                 canvasRef={canvasRef}
                 name={name}
                 profilePicture={profilePicture}
-              /> */}
+              />
             </div>
           </div>
         </div>

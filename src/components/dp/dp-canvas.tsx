@@ -25,11 +25,10 @@ export default function DpCanvas({
   }
 
   return (
-    <div className="dp-preview">
-      <canvas
-        ref={canvasRef}
-        className="bg-white p-3 lg:w-[500px] lg:h-[500px]"
-      />
+    <div className="dp-preview w-full max-w-[500px]">
+      <div className="w-full aspect-square">
+        <canvas ref={canvasRef} className="bg-white p-3 w-full h-full" />
+      </div>
 
       {name && profilePicture && (
         <div className="flex justify-center items-center mt-4">

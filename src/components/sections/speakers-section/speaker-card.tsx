@@ -50,7 +50,8 @@ const SpeakerCard = ({ speaker, variant = 'fixed' }: SpeakerCardProps) => {
               {speaker.name}
             </div>
             <div className="text-black text-[8px] sm:text-[10px] md:text-xs">
-              {speaker.title}, {speaker.company}
+              {speaker.title}
+              {speaker.company && ','} {speaker.company}
             </div>
           </div>
 

@@ -70,7 +70,7 @@ const DefaultHeroContent = () => {
         </div>
       </section>
 
-      <div className="flex justify-center mt-6 gap-4">
+      <div className="flex flex-col md:flex-row justify-center mt-6 gap-4 items-center">
         <Link
           className="z-[50] pointer-events-auto"
           href={`${config.workshopUrl}?utm_source=${config.appUrl}`}

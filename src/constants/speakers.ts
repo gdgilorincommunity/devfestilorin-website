@@ -11,6 +11,17 @@ import goodness from '@public/speakers/goodness.png'
 import ahmed from '@public/speakers/ahmed.png'
 import daniel from '@public/speakers/daniel.png'
 import areous from '@public/speakers/areous.png'
+import esuola from '@public/speakers/esuola.png'
+import imam from '@public/speakers/imam.png'
+import seyi from '@public/speakers/seyi.png'
+import babatunde from '@public/speakers/babatunde.png'
+import samuel from '@public/speakers/samuel.png'
+import moh from '@public/speakers/moh.png'
+import habeeb from '@public/speakers/habeeb.png'
+import queen from '@public/speakers/queen.png'
+import kerry from '@public/speakers/kerry.png'
+import alaran from '@public/speakers/alaran.png'
+import henry from '@public/speakers/henry.png'
 
 export const speakers: Speaker[] = [
   {
@@ -100,7 +111,7 @@ export const speakers: Speaker[] = [
     image: ahmed,
     title: 'Full Stack Engineer',
     company: 'Indicina',
-    type: 'conference',
+    type: 'workshop',
     color: '#FF7DAF',
   },
   {
@@ -109,7 +120,7 @@ export const speakers: Speaker[] = [
     image: daniel,
     title: 'Software Engineer',
     company: 'Alveum',
-    type: 'conference',
+    type: 'workshop',
     color: '#FFD427',
   },
   {
@@ -118,7 +129,106 @@ export const speakers: Speaker[] = [
     image: areous,
     title: 'Pixel Advocate',
     company: '',
+    type: 'workshop',
+    color: '#CCF6C5',
+  },
+  {
+    id: 13,
+    name: 'Esuola Daniel',
+    image: esuola,
+    title: 'Software Developer',
+    company: '',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 14,
+    name: 'Imam Abubakar',
+    image: imam,
+    title: 'CEO',
+    company: 'Sqaleup Inc',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 15,
+    name: 'Oluwaseyi Ajadi',
+    image: seyi,
+    title: 'Quality Assurance & Security Engineer',
+    company: '',
     type: 'conference',
     color: '#CCF6C5',
+  },
+  {
+    id: 16,
+    name: 'Shodeinde Babatunde',
+    image: babatunde,
+    title: 'Product Designer',
+    company: '',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 17,
+    name: 'Samuel Abada',
+    image: samuel,
+    title: 'Snr Software Engineer',
+    company: 'Nexlab Studio',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 18,
+    name: 'Mohammed Yayah',
+    image: moh,
+    title: 'Founder',
+    company: 'Magnital Technologies',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 19,
+    name: 'Queen Nwaguru',
+    image: queen,
+    title: 'Lead Recruiter/Operator',
+    company: '',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 20,
+    name: 'Habeeb K. Salaudeen',
+    image: habeeb,
+    title: 'CTO',
+    company: 'Alveum',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 21,
+    name: 'Kerry Ehikioya',
+    image: kerry,
+    title: 'Senior Frontend Engineer',
+    company: 'Helium Health',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 22,
+    name: 'Alaran Khaerat F.',
+    image: alaran,
+    title: 'Social media manager',
+    company: 'Nestuge',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 23,
+    name: 'Henry Mgbechi',
+    image: henry,
+    title: 'Founder',
+    company: 'Lions Picture ',
+    type: 'conference',
+    color: '#FFD427',
   },
 ]

@@ -1,29 +1,33 @@
+import Image from 'next/image'
+
 import Lanyard from '@/components/lanyard'
-import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 import { partners } from '@/constants/partners'
 
-const Partners = () => {
+const PartnersSection = () => {
   return (
-    <div className="border-b-3 border-b-[#1E1E1E]">
+    <section className="bg-[#FCF4F4]">
       <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20">
         <Lanyard
           lanyardClassName="bg-[#fff]"
-          title="Community Partners"
+          textSize="large"
+          title="Partners"
           titleColor="black"
         />
-      </div>
 
-      <div className="my-10">
-        <InfiniteMovingCards
-          direction="left"
-          itemType="partner"
-          items={partners}
-          pauseOnHover={true}
-          speed="normal"
-        />
+        <div className="grid lg:grid-cols-6 gap-10 my-10">
+          {partners.map((partner, index) => (
+            <Image
+              key={index}
+              unoptimized
+              alt={partner.name}
+              className="w-[150px] h-full object-contain"
+              src={partner.logo}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
-export default Partners
+export default PartnersSection

@@ -26,7 +26,7 @@ const SpeakersSection = () => {
           direction="left"
           items={sortedSpeakers}
           pauseOnHover={true}
-          speed="fast"
+          speed="slow"
         />
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">

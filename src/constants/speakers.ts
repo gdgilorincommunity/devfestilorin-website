@@ -22,6 +22,16 @@ import queen from '@public/speakers/queen.png'
 import kerry from '@public/speakers/kerry.png'
 import alaran from '@public/speakers/alaran.png'
 import henry from '@public/speakers/henry.png'
+import magret from '@public/speakers/magret.png'
+import kasorat from '@public/speakers/kasorat.png'
+import samuel2 from '@public/speakers/samuel-2.png'
+import adetunji from '@public/speakers/adetunji.png'
+import khadijah from '@public/speakers/khadijah.png'
+import theophilus from '@public/speakers/theophilus.png'
+import khalid from '@public/speakers/khalid.png'
+import mohammed from '@public/speakers/mohammed.png'
+import daniel2 from '@public/speakers/daniel-2.png'
+import micheal from '@public/speakers/micheal.png'
 
 export const speakers: Speaker[] = [
   {
@@ -230,5 +240,95 @@ export const speakers: Speaker[] = [
     company: 'Lions Picture ',
     type: 'conference',
     color: '#FFD427',
+  },
+  {
+    id: 24,
+    name: 'Magaret Ekerendu',
+    image: magret,
+    title: 'Data Annotation Specialist',
+    company: '',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 25,
+    name: 'Kaosarat Aduagba',
+    image: kasorat,
+    title: 'Product Manager',
+    company: 'Interswitch Group',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 26,
+    name: 'Samuel Afolabi',
+    image: samuel2,
+    title: 'Principal Cybersecurity Consultant',
+    company: '',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 27,
+    name: 'Adetunji Ogunyemi',
+    image: adetunji,
+    title: 'Project Manager',
+    company: 'Jamleads',
+    type: 'conference',
+    color: '#CCF6C5',
+  },
+  {
+    id: 28,
+    name: 'Khadijah Musa',
+    image: khadijah,
+    title: 'Developer Relations Lead',
+    company: ' Celo Africa DAO',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 29,
+    name: 'Theophilus Ukuyoma',
+    image: theophilus,
+    title: 'CTO',
+    company: 'Entobo Technologies',
+    type: 'workshop',
+    color: '#FFD427',
+  },
+  {
+    id: 30,
+    name: 'Khalid Sulyman',
+    image: khalid,
+    title: 'Product Engineer',
+    company: 'Tedbree',
+    type: 'workshop',
+    color: '#CCF6C5',
+  },
+  {
+    id: 31,
+    name: 'Mohammed I. Hassan',
+    image: mohammed,
+    title: 'Mobile Engineer',
+    company: '',
+    type: 'workshop',
+    color: '#FF7DAF',
+  },
+  {
+    id: 32,
+    name: 'Daniel Olabemiwo',
+    image: daniel2,
+    title: 'Software Engineer',
+    company: 'Spitch',
+    type: 'workshop',
+    color: '#FFD427',
+  },
+  {
+    id: 33,
+    name: 'Michael Ogundipe',
+    image: micheal,
+    title: 'Snr Mobile Developer',
+    company: 'Converge Group',
+    type: 'workshop',
+    color: '#CCF6C5',
   },
 ]

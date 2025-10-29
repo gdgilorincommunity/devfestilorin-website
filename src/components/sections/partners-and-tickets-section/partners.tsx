@@ -20,7 +20,7 @@ const PartnersSection = () => {
               key={index}
               unoptimized
               alt={partner.name}
-              className="w-[150px] h-full object-contain"
+              className="w-[150px] h-[80px] object-contain"
               src={partner.logo}
             />
           ))}

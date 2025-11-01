@@ -4,7 +4,7 @@ import ihs from '@public/sponsors/ihs.png'
 // import kite from '@public/sponsors/kite.svg'
 import alveum from '@public/sponsors/alveum.png'
 import xara from '@public/sponsors/xara.png'
-import malhub from '@public/sponsors/malhub.svg'
+import malhub from '@public/sponsors/malhub.png'
 import paystack from '@public/sponsors/paystack.png'
 
 export const sponsors: Sponsor[] = [

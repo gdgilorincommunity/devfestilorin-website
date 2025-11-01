@@ -3,7 +3,7 @@ import { Prize } from '@/types'
 export const prizes: Prize[] = [
   {
     position: '1',
-    amount: '₦450k',
+    amount: '₦878k',
     perks: 'Cash + Perks',
     backgroundColor: '#C3ECF6',
     textColor: '#57CAFF',
@@ -11,7 +11,7 @@ export const prizes: Prize[] = [
   },
   {
     position: '2',
-    amount: '₦325k',
+    amount: '₦634k',
     perks: 'Cash + Perks',
     backgroundColor: '#F8D8D8',
     textColor: '#FF7DAF',
@@ -19,7 +19,7 @@ export const prizes: Prize[] = [
   },
   {
     position: '3',
-    amount: '₦200k',
+    amount: '₦390k',
     perks: 'Cash + Perks',
     backgroundColor: '#FFE7A5',
     textColor: '#FFD427',
@@ -27,7 +27,7 @@ export const prizes: Prize[] = [
   },
   {
     position: '4',
-    amount: '₦50k',
+    amount: '₦98k',
     perks: 'Cash + Perks',
     backgroundColor: '#CCF6C5',
     textColor: '#5CDB6D',

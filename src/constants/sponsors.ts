@@ -5,16 +5,17 @@ import ihs from '@public/sponsors/ihs.png'
 import alveum from '@public/sponsors/alveum.png'
 import xara from '@public/sponsors/xara.png'
 import malhub from '@public/sponsors/malhub.svg'
+import paystack from '@public/sponsors/paystack.png'
 
 export const sponsors: Sponsor[] = [
-  // {
-  //   id: 1,
-  //   name: 'Kite',
-  //   logo: kite,
-  //   type: 'sponsor',
-  //   link: 'https://www.usekite.co/',
-  //   category: 'Headline',
-  // },
+  {
+    id: 1,
+    name: 'Paystack',
+    logo: paystack,
+    type: 'sponsor',
+    link: 'https://www.paystack.com/',
+    category: 'Headline',
+  },
   {
     id: 5,
     name: 'Malhub',

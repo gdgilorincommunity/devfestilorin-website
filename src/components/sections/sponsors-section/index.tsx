@@ -19,23 +19,25 @@ const SponsorsSection = () => {
         />
 
         <div className="grid lg:grid-cols-5 gap-10 my-10">
-          {sponsors.map((sponsor, index) => (
-            <Link
-              key={index}
-              className="group hover:scale-105 transition-transform duration-300"
-              href={`${sponsor.link}?utm_source=${config.appUrl}`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <Image
+          {sponsors
+            .filter((sponsor) => sponsor.name !== 'Alveum')
+            .map((sponsor, index) => (
+              <Link
                 key={index}
-                unoptimized
-                alt={sponsor.name}
-                className="w-[200px] h-full object-contain"
-                src={sponsor.logo}
-              />
-            </Link>
-          ))}
+                className="group hover:scale-105 transition-transform duration-300"
+                href={`${sponsor.link}?utm_source=${config.appUrl}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <Image
+                  key={index}
+                  unoptimized
+                  alt={sponsor.name}
+                  className="w-[200px] h-full object-contain"
+                  src={sponsor.logo}
+                />
+              </Link>
+            ))}
         </div>
 
         <div className="pb-10 md:pb-20 mt-8 flex justify-end">

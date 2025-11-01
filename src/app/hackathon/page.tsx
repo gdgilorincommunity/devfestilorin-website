@@ -3,15 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Hero from '@/components/hero'
-import { Button } from '@/components/ui/button'
-import config from '@/config'
-import { sponsors } from '@/constants/sponsors'
-import Lanyard from '@/components/lanyard'
 import JudgeCard from '@/components/judge-card'
-import { judges } from '@/constants/judges'
+import Lanyard from '@/components/lanyard'
+import Tickets from '@/components/sections/partners-and-tickets-section/tickets'
 import PrizesSection from '@/components/sections/prizes-section'
 import VenueSection from '@/components/sections/venues-section'
-import Tickets from '@/components/sections/partners-and-tickets-section/tickets'
+import { Button } from '@/components/ui/button'
+import config from '@/config'
+import { judges } from '@/constants/judges'
+import malhub from '@public/sponsors/malhub.png'
+import paystack from '@public/sponsors/paystack.png'
 
 export const metadata: Metadata = {
   title: `Hackathon - ${config.appName}`,
@@ -21,17 +22,6 @@ export const metadata: Metadata = {
 }
 
 export default function Hackathon() {
-  const hackathonSponsors = sponsors
-    .filter((sponsor) => sponsor.type === 'hackathon')
-    .sort((a, b) => {
-      const categoryOrder = { Headline: 1, Gold: 2, Silver: 3 }
-
-      return (
-        categoryOrder[a.category as keyof typeof categoryOrder] -
-        categoryOrder[b.category as keyof typeof categoryOrder]
-      )
-    })
-
   return (
     <div>
       <Hero>
@@ -41,31 +31,47 @@ export default function Hackathon() {
               <p className="text-center text-base text-[#5D5D5D] font-semibold leading-[28px]">
                 Devfest Hackathon with
               </p>
-              <div className="flex items-center justify-center space-y-4">
-                {hackathonSponsors.map((sponsor, index) => (
+              <div className="flex items-center justify-center space-y-4 flex-wrap gap-4">
+                <div className="flex items-center gap-2 mt-4">
                   <Link
-                    key={sponsor.id}
                     className="group hover:scale-105 transition-transform duration-300"
-                    href={`${sponsor.link}?utm_source=${config.appUrl}`}
+                    href={`https://www.paystack.com/?utm_source=${config.appUrl}`}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <Image
-                      key={index}
                       unoptimized
-                      alt={sponsor.name}
-                      className="w-[200px] h-full object-contain"
-                      src={sponsor.logo}
+                      alt="paystack"
+                      className="w-[200px]"
+                      src={paystack}
                     />
                   </Link>
-                ))}
+
+                  <span className="text-4xl font-bold text-[#000000] mx-2">
+                    &
+                  </span>
+
+                  <Link
+                    className="group hover:scale-105 transition-transform duration-300"
+                    href={`https://www.malhub.org/?utm_source=${config.appUrl}`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Image
+                      unoptimized
+                      alt="malhub"
+                      className="w-[170px] h-[full] object-contain"
+                      src={malhub}
+                    />
+                  </Link>
+                </div>
               </div>
               <p className="text-center text-base text-[#5D5D5D] font-medium leading-[28px] mt-5">
                 Prizes (cash + perks)
               </p>
 
               <h1 className="text-5xl lg:text-9xl font-bold text-center leading-[100%]">
-                ₦1,025,000
+                ₦2,000,000
               </h1>
             </div>
           </section>

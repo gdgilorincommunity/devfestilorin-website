@@ -1,7 +1,0 @@
-feat: remove malhub.svg and update sponsor images
-
-- deleted malhub.svg and replaced it with malhub.png in the sponsors section.
-- updated the hackathon page to include links and images for both paystack and malhub.
-- adjusted prize amounts in the prizes constant for better accuracy.
-- filtered out alveum from the sponsors list in the sponsorssection component.
-

@@ -119,7 +119,7 @@ export const recapData: ContentItem[] = [
     id: 'breakpoint-4',
     type: 'breakpoint',
     data: {
-      title: '40+',
+      title: '30+',
       description: 'Speakers',
       color: '#FF7DAF',
       type: 4,

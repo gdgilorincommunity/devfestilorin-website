@@ -6,7 +6,7 @@ export const menuLinks: MenuItem[] = [
     path: '/speakers',
   },
   {
-    title: 'Hackathon ₦1M+',
+    title: 'Hackathon ₦2M+',
     path: '/hackathon',
   },
   {

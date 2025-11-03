@@ -13,8 +13,8 @@ const SponsorsSection = () => {
       <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20">
         <Lanyard
           lanyardClassName="bg-[#fff]"
-          textSize="large"
-          title="Sponsors"
+          // textSize="large"
+          title="Thanks to our sponsors"
           titleColor="black"
         />
 

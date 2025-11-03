@@ -32,6 +32,12 @@ import khalid from '@public/speakers/khalid.png'
 import mohammed from '@public/speakers/mohammed.png'
 import daniel2 from '@public/speakers/daniel-2.png'
 import micheal from '@public/speakers/micheal.png'
+import shola from '@public/speakers/shola.png'
+import adedoyin from '@public/speakers/adedoyin.png'
+import mahmud from '@public/speakers/mahmud.png'
+import tajudeen from '@public/speakers/tajudeen.png'
+import tolulope from '@public/speakers/tolulope.png'
+import precious from '@public/speakers/precious.png'
 
 export const speakers: Speaker[] = [
   {
@@ -40,6 +46,15 @@ export const speakers: Speaker[] = [
     image: sodiq,
     title: 'Program manager',
     company: 'Google',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 34,
+    name: 'Shola Akinlade',
+    image: shola,
+    title: 'CEO',
+    company: 'Paystack',
     type: 'conference',
     color: '#FF7DAF',
   },
@@ -103,7 +118,7 @@ export const speakers: Speaker[] = [
     image: glory,
     title: 'Android Engineer',
     company: 'Bglow',
-    type: 'conference',
+    type: 'workshop',
     color: '#FFD427',
   },
   {
@@ -328,6 +343,51 @@ export const speakers: Speaker[] = [
     image: micheal,
     title: 'Snr Mobile Developer',
     company: 'Converge Group',
+    type: 'workshop',
+    color: '#CCF6C5',
+  },
+  {
+    id: 35,
+    name: 'Adedoyinsolami Adeyeye',
+    image: adedoyin,
+    title: 'Product manager',
+    company: '',
+    type: 'conference',
+    color: '#FF7DAF',
+  },
+  {
+    id: 36,
+    name: 'Mahmud. Mukhtar',
+    image: mahmud,
+    title: 'A.Security Researcher Peermoove',
+    company: '',
+    type: 'workshop',
+    color: '#FFD427',
+  },
+  {
+    id: 37,
+    name: 'Tajudeen Nurudeen',
+    image: tajudeen,
+    title: 'Senior Flutter Developer',
+    company: '',
+    type: 'workshop',
+    color: '#CCF6C5',
+  },
+  {
+    id: 38,
+    name: 'Tolulope Johnson',
+    image: tolulope,
+    title: 'Senior Creative Designer',
+    company: 'TenTrade',
+    type: 'conference',
+    color: '#FFD427',
+  },
+  {
+    id: 39,
+    name: 'Precious Omonzejele',
+    image: precious,
+    title: 'CodeXplorer',
+    company: 'Kidsthatcode',
     type: 'workshop',
     color: '#CCF6C5',
   },

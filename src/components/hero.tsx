@@ -2,9 +2,11 @@
 
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 import config from '@/config'
 import { useShuffledTagsOnMobile } from '@/hooks/use-shuffle'
+import paystack from '@public/sponsors/paystack.png'
 
 import { Button } from './ui/button'
 import GravityTags from './gravity-tags'
@@ -56,15 +58,19 @@ export default Hero
 
 const DefaultHeroContent = () => {
   return (
-    <div className="px-6 py-10 md:py-20">
+    <div className="px-6 py-10 md:pb-20">
       <section className="max-w-7xl mx-auto elative">
-        <div className="flex flex-col items-center justify-center gap-6 max-w-[500px] mx-auto">
+        <div className="flex flex-col items-center justify-center gap-1 mb-6">
+          <h3 className="font-bold text-[#5D5D5D]">Headline Sponsor</h3>
+          <Image alt="paystack" height={150} src={paystack} width={150} />
+        </div>
+        <div className="flex flex-col items-center justify-center gap-6 max-w-[1000px] mx-auto">
           <h1 className="text-[74px] font-bold text-center leading-[100%]">
-            Devfest <br className="hidden md:block" /> Ilorin
+            Thank you for attending Devfest Ilorin 2025
           </h1>
 
-          <p className="text-center text-2xl text-[#5D5D5D] font-bold text-[18px] leading-[28px]">
-            Join us at DevFest Ilorin 2025 from October 30th–31st and November
+          <p className="text-center text-2xl text-[#5D5D5D] font-bold text-[18px] leading-[28px] max-w-[600px] mx-auto">
+            DevFest Ilorin 2025 happened from October 30th–31st and November
             1st, 2025. Ilorin&apos;s largest tech celebration of the year!
           </p>
         </div>
@@ -73,23 +79,34 @@ const DefaultHeroContent = () => {
       <div className="flex flex-col md:flex-row justify-center mt-6 gap-4 items-center">
         <Link
           className="z-[50] pointer-events-auto"
-          href={`${config.workshopUrl}?utm_source=${config.appUrl}`}
+          href={`https://photos.app.goo.gl/d7Rx6w8Mi73M89pG8?utm_source=${config.appUrl}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           <Button showArrow className="relative pointer-events-auto">
-            Get Tickets Day 1 & 2
+            Photo for Day 1
           </Button>
         </Link>
 
         <Link
           className="z-[50] pointer-events-auto"
-          href={`${config.ticketUrl}?utm_source=${config.appUrl}`}
+          href={`https://photos.app.goo.gl/P1ejHtZUDb58qrWUA?utm_source=${config.appUrl}`}
           rel="noopener noreferrer"
           target="_blank"
         >
           <Button showArrow className="relative pointer-events-auto">
-            Get Tickets Day 3
+            Photo for Day 2
+          </Button>
+        </Link>
+
+        <Link
+          className="z-[50] pointer-events-auto"
+          href={`https://photos.app.goo.gl/JQoga7reWzYeDB9o7?utm_source=${config.appUrl}`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Button showArrow className="relative pointer-events-auto">
+            Photo for Day 3
           </Button>
         </Link>
       </div>

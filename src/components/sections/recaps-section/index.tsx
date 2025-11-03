@@ -17,7 +17,7 @@ const RecapsSection = () => {
         <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 mb-8">
           <Lanyard
             lanyardClassName="bg-[#FCF4F4]"
-            title="Previous Devfest Recaps:"
+            title="Devfest 2025 Recaps:"
             titleColor="white"
           />
         </div>

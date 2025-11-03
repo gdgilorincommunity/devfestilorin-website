@@ -6,6 +6,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import conference from '@public/conference.png'
 import workshops from '@public/workshops.png'
 import hackathons from '@public/hackathons.png'
 import privateNetwork from '@public/private-network.png'
@@ -86,6 +87,7 @@ const EventsSection: React.FC = () => {
           <div className="lg:col-span-2 space-y-8 lg:space-y-12 flex flex-col">
             <EventCard
               bgColor="#FFE7A5"
+              bgImage={conference}
               textColor="#FFD427"
               title="Conference"
             />

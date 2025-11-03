@@ -44,7 +44,7 @@ export default function Sponsors() {
         <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-20 z-20">
           <div className="lg:w-[1100px] mx-auto pt-10">
             <h1 className="text-wrap text-center mb-4 text-5xl lg:text-7xl font-extrabold tracking-tight leading-none text-[#1E1E1E]">
-              Our Sponsors
+              Thanks to our sponsors
             </h1>
             <p className="text-wrap text-center text-base lg:text-[18px] text-[#5D5D5D] font-bold lg:w-[900px] mx-auto">
               We&apos;re proud to be supported by an incredible lineup of

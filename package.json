@@ -29,7 +29,7 @@
     "lucide-react": "^0.526.0",
     "matter-js": "^0.20.0",
     "motion": "^12.23.11",
-    "next": "15.4.4",
+    "next": "15.4.10",
     "poly-decomp": "^0.3.0",
     "react": "19.1.0",
     "react-cropper": "^2.3.3",

@@ -1,15 +1,16 @@
-import { Award } from '@/types'
 import Image from 'next/image'
 import React from 'react'
+
+import { Award } from '@/types'
 
 const AwardWinnerCard = ({ awardWinner }: { awardWinner: Award }) => {
   return (
     <div>
       <Image
-        src={awardWinner.image}
+        unoptimized
         alt={awardWinner.name}
         className="w-[350px]"
-        unoptimized
+        src={awardWinner.image}
       />
 
       <div className="mt-8">

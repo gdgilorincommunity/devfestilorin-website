@@ -17,6 +17,10 @@ export const menuLinks: MenuItem[] = [
     title: 'Get DP',
     path: '/get-dp',
   },
+  {
+    title: 'Awards',
+    path: '/awards',
+  },
 
   // {
   //   title: 'Teams',

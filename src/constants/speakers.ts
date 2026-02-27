@@ -1,4 +1,3 @@
-import { Speaker } from '@/types'
 import sodiq from '@public/speakers/sodiq.png'
 import blessing from '@public/speakers/blessing.png'
 import chukwuemeka from '@public/speakers/chukwuemeka.png'
@@ -38,6 +37,7 @@ import mahmud from '@public/speakers/mahmud.png'
 import tajudeen from '@public/speakers/tajudeen.png'
 import tolulope from '@public/speakers/tolulope.png'
 import precious from '@public/speakers/precious.png'
+import { Speaker } from '@/types'
 
 export const speakers: Speaker[] = [
   {

@@ -2,11 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 
+import GrayTicketLanyard from '@public/gray-ticket-lanyard.png'
+import ticketLanyard from '@public/ticket-lanyard.png'
 import Lanyard from '@/components/lanyard'
 import { Button } from '@/components/ui/button'
 import { tickets } from '@/constants/tickets'
-import GrayTicketLanyard from '@public/gray-ticket-lanyard.png'
-import ticketLanyard from '@public/ticket-lanyard.png'
 import config from '@/config'
 
 const Tickets = () => {

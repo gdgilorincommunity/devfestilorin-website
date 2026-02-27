@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState, useRef } from 'react'
 
-import DpCanvas from '@/components/dp/dp-canvas'
 import DpForm from '@/components/dp/dp-form'
+import DpCanvas from '@/components/dp/dp-canvas'
 
 import red from '../../../public/dp/dp-1.png'
 import green from '../../../public/dp/dp-2.png'

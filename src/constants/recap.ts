@@ -1,4 +1,3 @@
-import { ContentItem } from '@/types/recap'
 import recap1 from '@public/recaps/recap-1.png'
 import recap2 from '@public/recaps/recap-2.png'
 import recap3 from '@public/recaps/recap-3.png'
@@ -8,6 +7,7 @@ import recap6 from '@public/recaps/recap-6.png'
 import recap7 from '@public/recaps/recap-7.png'
 import recap8 from '@public/recaps/recap-8.png'
 import recap9 from '@public/recaps/recap-9.png'
+import { ContentItem } from '@/types/recap'
 
 export const recapData: ContentItem[] = [
   {

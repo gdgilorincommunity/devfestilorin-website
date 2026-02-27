@@ -4,13 +4,9 @@ import { fileURLToPath } from 'url'
 import globals from 'globals'
 import { FlatCompat } from '@eslint/eslintrc'
 import tseslint from 'typescript-eslint'
-import pluginReact from 'eslint-plugin-react'
 import pluginPrettier from 'eslint-plugin-prettier'
-import pluginReactHooks from 'eslint-plugin-react-hooks'
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
-import pluginNext from '@next/eslint-plugin-next'
+import nextConfig from 'eslint-config-next'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
-import pluginImport from 'eslint-plugin-import'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -18,6 +14,9 @@ const __dirname = dirname(__filename)
 const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
+
+// Extract plugins from nextConfig to ensure reference equality
+const nextPlugins = Object.assign({}, ...nextConfig.map((c) => c.plugins))
 
 export default tseslint.config(
   {
@@ -32,14 +31,8 @@ export default tseslint.config(
       'coverage/',
     ],
   },
-  ...compat.extends(
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:@next/next/recommended',
-  ),
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...compat.extends('plugin:prettier/recommended'),
+  ...nextConfig,
   {
     // Files to apply this configuration to
     files: ['**/*.{js,jsx,mjs,ts,tsx}'],
@@ -64,14 +57,9 @@ export default tseslint.config(
       },
     },
     plugins: {
-      react: pluginReact,
+      ...nextPlugins,
       prettier: pluginPrettier,
-      'react-hooks': pluginReactHooks,
-      'jsx-a11y': pluginJsxA11y,
-      '@next/next': pluginNext,
       'unused-imports': pluginUnusedImports,
-      import: pluginImport,
-      '@typescript-eslint': tseslint.plugin,
     },
     rules: {
       // Custom rules
@@ -80,6 +68,10 @@ export default tseslint.config(
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react-hooks/exhaustive-deps': 'off',
+      // Bypassing strict React Hooks rules for now
+      'react-hooks/purity': 'off',
+      'react-hooks/immutability': 'off',
+      'react-hooks/set-state-in-effect': 'off',
       'jsx-a11y/click-events-have-key-events': 'warn',
       'jsx-a11y/interactive-supports-focus': 'warn',
       'prettier/prettier': 'warn',

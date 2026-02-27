@@ -1,4 +1,3 @@
-import { Award } from '@/types'
 import sodiq from '@public/awards/sodiq.png'
 import zul from '@public/awards/zul.png'
 import moh from '@public/awards/moh.png'
@@ -14,6 +13,7 @@ import adeola from '@public/awards/adeola.png'
 import abu from '@public/awards/abu.png'
 import jamiu from '@public/awards/jamiu.png'
 import areous from '@public/awards/areous.png'
+import { Award } from '@/types'
 
 export const awardsWinners: Award[] = [
   {

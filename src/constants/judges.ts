@@ -1,7 +1,7 @@
-import { Judge } from '@/types'
 import judge1 from '@public/judges/judge-1.png'
 import judge2 from '@public/judges/judge-2.png'
 import judge3 from '@public/judges/judge-3.jpg'
+import { Judge } from '@/types'
 
 export const judges: Judge[] = [
   {

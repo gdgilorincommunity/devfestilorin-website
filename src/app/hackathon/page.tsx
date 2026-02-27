@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import malhub from '@public/sponsors/malhub.png'
+import paystack from '@public/sponsors/paystack.png'
 import Hero from '@/components/hero'
 import JudgeCard from '@/components/judge-card'
 import Lanyard from '@/components/lanyard'
@@ -11,8 +13,6 @@ import VenueSection from '@/components/sections/venues-section'
 import { Button } from '@/components/ui/button'
 import config from '@/config'
 import { judges } from '@/constants/judges'
-import malhub from '@public/sponsors/malhub.png'
-import paystack from '@public/sponsors/paystack.png'
 
 export const metadata: Metadata = {
   title: `Hackathon - ${config.appName}`,

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
+import prizeLanyard from '@public/prize-lanyard.png'
 import Lanyard from '@/components/lanyard'
 import { prizes } from '@/constants/prizes'
-import prizeLanyard from '@public/prize-lanyard.png'
 
 const PrizesSection = () => {
   return (

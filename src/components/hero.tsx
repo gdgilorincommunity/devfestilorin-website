@@ -4,9 +4,9 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 
-import config from '@/config'
-import { useShuffledTagsOnMobile } from '@/hooks/use-shuffle'
 import paystack from '@public/sponsors/paystack.png'
+import { useShuffledTagsOnMobile } from '@/hooks/use-shuffle'
+import config from '@/config'
 
 import { Button } from './ui/button'
 import GravityTags from './gravity-tags'
